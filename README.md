@@ -101,13 +101,13 @@ functions — the binary is the source of truth. Findings are reproduced in
 
 <img src="assets/hardening.png" alt="Hardening mitigations" width="620">
 
-**ELF mapping — file offset → virtual address**
+**ELF mapping — file offsets vs virtual addresses** (rendered as a diff)
 
-<img src="assets/memory-map.png" alt="File offset to virtual address PT_LOAD mapping with .bss noted" width="900">
+<img src="assets/memory-map.png" alt="Unified-diff style view of file offsets vs virtual addresses for the PT_LOAD segments" width="900">
 
-*The RW segment shifts `+0x1000` from file offset `0x8b98` to virtual `0x9b98`, and its
-`.bss` tail (`memsz − filesz = 0x80608`) is not file-backed — a detail the raw ELF
-tables hide.*
+*Three file-backed segments map 1:1; the RW segment shifts `+0x1000`
+(file `0x8b98` → mem `0x9b98`) and carries a **non-file-backed `.bss` tail**
+(`memsz − filesz = 0x8017c`, ~525 KB) that the raw ELF tables hide.*
 
 **Section sizes**
 
