@@ -76,45 +76,83 @@ def section_chart():
 
 # ---------------------------------------------------------------- segment map
 def segment_map():
+    """File-offset -> virtual-address PT_LOAD mapping (ELF 'which bytes go where')."""
+    from matplotlib.patches import ConnectionPatch
+
     d = load("rea-inspect-binary-layout.json")["raw_result"]
+    colors = {"R--": BLUE, "R-X": GREEN, "RW-": ORANGE}
     segs = []
     for s in d["segments"]:
         if s["type"] != "PT_LOAD":
             continue
-        start = int(s["virtual_address"], 16)
-        size = int(s["file_size"], 16)
+        off = int(s["offset"], 16)
+        vaddr = int(s["virtual_address"], 16)
+        fsz = int(s["file_size"], 16)
+        msz = int(s["memory_size"], 16)
         flags = int(s["flags"], 16)
         perm = ("R" if flags & 4 else "-") + ("W" if flags & 2 else "-") + \
                ("X" if flags & 1 else "-")
-        segs.append((start, size, perm))
+        label = {"R-X": ".init .plt .plt.sec .text .fini",
+                 "R--": ".rodata strings",
+                 "RW-": ".data .got"}.get(perm, "")
+        if off == 0:
+            label = ".interp .dynsym .dynstr .rela"
+        segs.append((off, vaddr, fsz, msz, perm, label))
     segs.sort()
-    fig, ax = plt.subplots(figsize=(11, 3.4), dpi=160)
-    colors = {"R--": BLUE, "R-X": GREEN, "RW-": ORANGE}
-    for start, size, perm in segs:
-        ax.barh(0, size, left=start, height=0.5,
-                color=colors.get(perm, DIM), edgecolor=BG, linewidth=1.2)
-        ax.text(start + size / 2, 0, perm, ha="center", va="center",
-                color="#0d1117", fontweight="bold", fontsize=10)
-        ax.text(start, -0.42, f"0x{start:x}", ha="left", va="center",
-                color=DIM, fontsize=8)
-    # annotations
-    ax.annotate(".text / code", xy=(0x2840, 0.28), xytext=(0x2840, 0.85),
-                color=GREEN, fontsize=9, arrowprops=dict(arrowstyle="->", color=GREEN))
-    ax.annotate(".rodata strings", xy=(0x7000, -0.28), xytext=(0x7000, -0.85),
-                color=PURPLE, fontsize=9, arrowprops=dict(arrowstyle="->", color=PURPLE))
-    ax.annotate("RELRO/GOT", xy=(0x9b98, 0.28), xytext=(0x9b98, 0.95),
-                color=ORANGE, fontsize=9, arrowprops=dict(arrowstyle="->", color=ORANGE))
-    ax.set_title("Loadable segments (virtual address ranges) - PIE image base 0",
-                 color=FG, fontsize=13, pad=14)
-    ax.set_yticks([])
-    ax.set_ylim(-1.1, 1.25)
-    ax.set_xlim(0, 0xa400)
-    ax.set_xticks([0, 0x2000, 0x4000, 0x6000, 0x8000, 0xa000])
-    ax.set_xticklabels([f"0x{v:x}" for v in ax.get_xticks()], fontsize=9)
-    for sp in ("top", "right", "left"):
-        ax.spines[sp].set_visible(False)
-    fig.tight_layout()
-    fig.savefig(os.path.join(ASSETS, "memory-map.png"))
+    xmax = 0xa400
+    fig, (axf, axv) = plt.subplots(
+        2, 1, figsize=(13, 5.0), dpi=160, sharex=True,
+        gridspec_kw={"hspace": 0.35})
+    for ax, key, row in ((axf, 0, "file offset"), (axv, 1, "virtual addr")):
+        for off, vaddr, fsz, msz, perm, label in segs:
+            x = off if key == 0 else vaddr
+            ax.barh(0, fsz, left=x, height=0.75,
+                    color=colors.get(perm, DIM), edgecolor=BG, linewidth=1.4)
+            ax.text(x + fsz / 2, 0, perm, ha="center", va="center",
+                    color="#0d1117", fontweight="bold", fontsize=10)
+        ax.set_ylim(-0.55, 0.55)
+        ax.set_yticks([])
+        ax.set_ylabel(row, color=FG, fontsize=11)
+        for sp in ("top", "right", "left"):
+            ax.spines[sp].set_visible(False)
+    # section labels under the virtual-address row
+    for off, vaddr, fsz, msz, perm, label in segs:
+        if not label:
+            continue
+        cx = vaddr + fsz / 2
+        if fsz > 0x3000:
+            axv.text(cx, 0, label, ha="center", va="center",
+                     color="#0d1117", fontsize=8.5)
+        else:
+            axv.annotate(label, xy=(cx, -0.38), xytext=(cx, -0.95),
+                         color=FG, fontsize=9, ha="center",
+                         arrowprops=dict(arrowstyle="-", color=DIM, lw=0.8))
+    # connect file <-> vaddr block left edges
+    for off, vaddr, fsz, msz, perm, label in segs:
+        fig.add_artist(ConnectionPatch(
+            xyA=(off, -0.4), coordsA=axf.transData,
+            xyB=(vaddr, 0.4), coordsB=axv.transData,
+            color="#484f58", lw=0.9, alpha=0.9, zorder=0))
+    # highlight the +0x1000 file->vaddr shift on the RW segment
+    axf.annotate("file 0x8b98", xy=(0x8b98, -0.4), xytext=(0x8b98, -1.25),
+                 color=ORANGE, fontsize=9, ha="center",
+                 arrowprops=dict(arrowstyle="-", color=ORANGE, lw=0.9))
+    axf.text(0x9b98, -1.7, "RW segment shifts +0x1000\n(file 0x8b98 -> mem 0x9b98)",
+             color=ORANGE, fontsize=9, ha="center", va="top")
+    bss = max(msz - fsz for _, _, fsz, msz, _, _ in segs)
+    fig.suptitle("ELF mapping: file offset vs virtual address  (PIE image base 0)",
+                 color=FG, fontsize=14, x=0.5, y=1.02)
+    fig.text(0.5, -0.06,
+             f".bss / uninitialized memory in the RW segment is not file-backed "
+             f"(memsz - filesz = 0x{bss:x} = {bss:,} bytes)",
+             color=DIM, fontsize=9, ha="center")
+    axv.set_xlim(0, xmax)
+    axv.set_xticks([0, 0x2000, 0x4000, 0x6000, 0x8000, 0xa000])
+    axv.set_xticklabels([f"0x{v:x}" for v in axv.get_xticks()], fontsize=9)
+    axv.xaxis.grid(True, color=GRID, lw=0.6)
+    axv.set_axisbelow(True)
+    fig.savefig(os.path.join(ASSETS, "memory-map.png"),
+                bbox_inches="tight", pad_inches=0.25)
     plt.close(fig)
 
 
