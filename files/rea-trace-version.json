@@ -1,0 +1,175 @@
+{
+  "evidence_id": "ev_45a1984b26da7fe55b88b7ac2ba8aa75b38c3d58cb869a299966ec581fe76129",
+  "subject": {
+    "name": "nc",
+    "digest": {
+      "sha256": "de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d"
+    },
+    "format": "elf",
+    "architecture": "x86_64",
+    "local_path": "/home/illy/REA/nc"
+  },
+  "provider": {
+    "id": "rea-workflow",
+    "name": "REA composed investigation workflow",
+    "version": "1"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "rea-workflow",
+      "name": "REA composed investigation workflow",
+      "version": "1"
+    },
+    "parameters": {
+      "upstream_analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "elf",
+          "architecture": "x86_64",
+          "available_architectures": [
+            "x86_64"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default"
+        },
+        "digest": "a4517e7f2ac9f7c2ed09da4d8f8465b7590bc2ac0569f57abab2f10bef81fd3d"
+      }
+    },
+    "digest": "15717d69f4ab191a684912e95ff181da4e883a5e6c277fb6ab7528842a1c06af"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "trace_feature",
+  "parameters": {
+    "query": "OpenBSD netcat (Debian patchlevel 1.234-1)",
+    "case_sensitive": false
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "query": "OpenBSD netcat (Debian patchlevel 1.234-1)",
+    "search_mode": "literal",
+    "matches": [
+      {
+        "type": "string",
+        "address": "0x107a78",
+        "value": "OpenBSD netcat (Debian patchlevel 1.234-1)\n"
+      }
+    ],
+    "references": [
+      {
+        "target_address": "0x107a78",
+        "source_address": "0x104b27",
+        "containing_procedure": {
+          "query_address": "0x104b27",
+          "found": true,
+          "procedure": {
+            "address": "0x102a90",
+            "name": "FUN_00102a90",
+            "classification": {
+              "external": false,
+              "thunk": false,
+              "thunk_target": null,
+              "provenance": "ghidra-function-manager"
+            },
+            "body": {
+              "available": true,
+              "provenance": "ghidra-function-body-address-set",
+              "ranges": [
+                {
+                  "start": "0x102a90",
+                  "end": "0x102fe0"
+                },
+                {
+                  "start": "0x102fe8",
+                  "end": "0x10324e"
+                },
+                {
+                  "start": "0x103250",
+                  "end": "0x103522"
+                },
+                {
+                  "start": "0x103528",
+                  "end": "0x10386d"
+                },
+                {
+                  "start": "0x103870",
+                  "end": "0x1041a1"
+                },
+                {
+                  "start": "0x1041a8",
+                  "end": "0x1041ba"
+                },
+                {
+                  "start": "0x1041c0",
+                  "end": "0x1041d7"
+                },
+                {
+                  "start": "0x1041e0",
+                  "end": "0x10435a"
+                },
+                {
+                  "start": "0x104360",
+                  "end": "0x1043b0"
+                },
+                {
+                  "start": "0x1043b8",
+                  "end": "0x1043d2"
+                },
+                {
+                  "start": "0x1043d8",
+                  "end": "0x104474"
+                },
+                {
+                  "start": "0x104478",
+                  "end": "0x1044a6"
+                },
+                {
+                  "start": "0x1044b0",
+                  "end": "0x1044d3"
+                },
+                {
+                  "start": "0x1044d8",
+                  "end": "0x1048cd"
+                },
+                {
+                  "start": "0x1048d0",
+                  "end": "0x10523a"
+                }
+              ],
+              "total_bytes": 10086,
+              "span_bytes": 10155,
+              "non_contiguous": true,
+              "contains_entry": true
+            }
+          }
+        }
+      }
+    ],
+    "truncated": false,
+    "residual_unknowns": []
+  },
+  "confidence": "derived",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Derived by an REA composed workflow."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

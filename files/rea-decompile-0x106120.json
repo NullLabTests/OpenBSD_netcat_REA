@@ -1,0 +1,67 @@
+{
+  "evidence_id": "ev_d98bb31712d7e85eb8a24bbd04a568fe41251f49fef2504a50ac6bb456ee8ad8",
+  "subject": {
+    "name": "nc",
+    "digest": {
+      "sha256": "de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d"
+    },
+    "format": "elf",
+    "architecture": "x86_64",
+    "local_path": "/home/illy/REA/nc"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "elf",
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default"
+    },
+    "digest": "a4517e7f2ac9f7c2ed09da4d8f8465b7590bc2ac0569f57abab2f10bef81fd3d"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x106120"
+  },
+  "raw_result": "\nsize_t FUN_00106120(int param_1,void *param_2,size_t *param_3,int param_4)\n\n{\n  void *pvVar1;\n  int *piVar2;\n  long lVar3;\n  size_t __n;\n  size_t sVar4;\n  \n  if (param_1 == -1) {\n    return 0xffffffffffffffff;\n  }\n  sVar4 = *param_3;\n  if ((param_4 == 0) || (pvVar1 = memchr(param_2,10,sVar4), pvVar1 == (void *)0x0)) {\n    if ((long)sVar4 < 1) goto joined_r0x00106223;\n    param_4 = 0;\nLAB_001061cb:\n    sVar4 = write(param_1,param_2,sVar4);\n    if (sVar4 == 0xffffffffffffffff) goto LAB_001061df;\n    if ((long)sVar4 < 1) {\n      return sVar4;\n    }\n    if (param_4 != 1) goto LAB_00106249;\n  }\n  else {\n    if (DAT_0018a194 == 0) {\nLAB_00106210:\n      sVar4 = (long)pvVar1 + (1 - (long)param_2);\n      if (0 < (long)sVar4) goto LAB_001061cb;\njoined_r0x00106223:\n      if (sVar4 != 0xffffffffffffffff) {\n        return sVar4;\n      }\nLAB_001061df:\n      piVar2 = __errno_location();\n      return ~(ulong)(*piVar2 == 0xb || *piVar2 == 4);\n    }\n    if (param_2 == pvVar1) {\n      sVar4 = 1;\n    }\n    else {\n      sVar4 = (long)pvVar1 - (long)param_2;\n      if (*(char *)((long)pvVar1 + -1) == '\\r') goto LAB_00106210;\n      if ((long)sVar4 < 1) goto joined_r0x00106223;\n      sVar4 = write(param_1,param_2,sVar4);\n      if (sVar4 == 0xffffffffffffffff) goto LAB_001061df;\n      if ((long)sVar4 < 0) {\n        return sVar4;\n      }\n      sVar4 = sVar4 + 1;\n    }\n    lVar3 = FUN_00105340(write,param_1,\"\\r\\n\",2);\n    if (lVar3 != 2) {\n      sVar4 = FUN_00102a32();\n      return sVar4;\n    }\n  }\n  if (DAT_0018a188 != 0) {\n    sleep(DAT_0018a188);\n  }\nLAB_00106249:\n  __n = *param_3 - sVar4;\n  if (0 < (long)__n) {\n    memmove(param_2,(void *)((long)param_2 + sVar4),__n);\n    __n = *param_3 - sVar4;\n  }\n  *param_3 = __n;\n  return sVar4;\n}\n\n",
+  "normalized_result": "\nsize_t FUN_00106120(int param_1,void *param_2,size_t *param_3,int param_4)\n\n{\n  void *pvVar1;\n  int *piVar2;\n  long lVar3;\n  size_t __n;\n  size_t sVar4;\n  \n  if (param_1 == -1) {\n    return 0xffffffffffffffff;\n  }\n  sVar4 = *param_3;\n  if ((param_4 == 0) || (pvVar1 = memchr(param_2,10,sVar4), pvVar1 == (void *)0x0)) {\n    if ((long)sVar4 < 1) goto joined_r0x00106223;\n    param_4 = 0;\nLAB_001061cb:\n    sVar4 = write(param_1,param_2,sVar4);\n    if (sVar4 == 0xffffffffffffffff) goto LAB_001061df;\n    if ((long)sVar4 < 1) {\n      return sVar4;\n    }\n    if (param_4 != 1) goto LAB_00106249;\n  }\n  else {\n    if (DAT_0018a194 == 0) {\nLAB_00106210:\n      sVar4 = (long)pvVar1 + (1 - (long)param_2);\n      if (0 < (long)sVar4) goto LAB_001061cb;\njoined_r0x00106223:\n      if (sVar4 != 0xffffffffffffffff) {\n        return sVar4;\n      }\nLAB_001061df:\n      piVar2 = __errno_location();\n      return ~(ulong)(*piVar2 == 0xb || *piVar2 == 4);\n    }\n    if (param_2 == pvVar1) {\n      sVar4 = 1;\n    }\n    else {\n      sVar4 = (long)pvVar1 - (long)param_2;\n      if (*(char *)((long)pvVar1 + -1) == '\\r') goto LAB_00106210;\n      if ((long)sVar4 < 1) goto joined_r0x00106223;\n      sVar4 = write(param_1,param_2,sVar4);\n      if (sVar4 == 0xffffffffffffffff) goto LAB_001061df;\n      if ((long)sVar4 < 0) {\n        return sVar4;\n      }\n      sVar4 = sVar4 + 1;\n    }\n    lVar3 = FUN_00105340(write,param_1,\"\\r\\n\",2);\n    if (lVar3 != 2) {\n      sVar4 = FUN_00102a32();\n      return sVar4;\n    }\n  }\n  if (DAT_0018a188 != 0) {\n    sleep(DAT_0018a188);\n  }\nLAB_00106249:\n  __n = *param_3 - sVar4;\n  if (0 < (long)__n) {\n    memmove(param_2,(void *)((long)param_2 + sVar4),__n);\n    __n = *param_3 - sVar4;\n  }\n  *param_3 = __n;\n  return sVar4;\n}\n\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

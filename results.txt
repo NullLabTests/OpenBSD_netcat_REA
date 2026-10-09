@@ -1,0 +1,162 @@
+================================================================================
+REA (Reverse Engineer Anything) RESULTS - target: nc
+================================================================================
+Tool:      REA v6.2.0 (github.com/NullLabTests/rea -> morluto/rea)
+Providers: pwntools-elf (offline ELF layout) + Ghidra 12.1.4 (deep analysis)
+Target:    /home/illy/REA/nc
+SHA-256:   de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d
+Artifacts: ./files/   (see ./files/README.md for the full index)
+
+--------------------------------------------------------------------------------
+1. WHAT THIS FILE IS
+--------------------------------------------------------------------------------
+`nc` is the stock Ubuntu/Debian **netcat-openbsd** executable:
+
+  - ELF64, x86-64, little-endian, PIE (ET_DYN), stripped (.symtab removed)
+  - .note.package: {"type":"deb","os":"ubuntu","name":"netcat-openbsd",
+                    "version":"1.234-1","architecture":"amd64"}
+  - Embedded banner: "OpenBSD netcat (Debian patchlevel 1.234-1)"
+  - Build ID: f8b823fa69cb2bcae5acf66b977262d7b7321755
+  - 39,160 bytes of code/data
+
+Conclusion: this is a distribution-packaged, unmodified-looking copy of the
+OpenBSD netcat network utility. There is no evidence of custom/trojanized code;
+the embedded packaging note, version banner, option table, and proxy/TLS feature
+set are all consistent with the upstream `netcat-openbsd 1.234-1` package.
+
+--------------------------------------------------------------------------------
+2. HOW IT WAS REVERSE ENGINEERED (method)
+--------------------------------------------------------------------------------
+1) Offline ELF layout via REA's `inspect_binary_layout` (no execution):
+   sections, segments, symbols, relocations, dynamic linkage, hardening flags.
+2) Ghidra 12.1.4 headless via REA's `--provider ghidra`:
+   - `analyze`  -> imported the image (base 0x100000), default auto-analysis
+   - `search --kind procedures/strings` -> 236 procedures, 247 strings
+   - `decompile` -> pseudocode for main + every helper (25 functions)
+   - `trace`     -> reference graph for the version banner
+3) Cross-checks with readelf/objdump/nm/strings.
+4) Upstream `netcat.c` (same patchlevel intent) used ONLY to correlate function
+   roles; the binary itself is the source of truth.
+
+Environment: Ghidra 12.1.4 + Temurin JDK 21 (Ghidra rejects JDK 25); isolated
+pwntools 4.15.0 / pyelftools 0.33 / unicorn 2.1.2 for the offline provider.
+
+--------------------------------------------------------------------------------
+3. HARDENING / COMPILER FLAGS (static, inferred)
+--------------------------------------------------------------------------------
+  PIE ................ yes  (ET_DYN, FLAGS_1 = NOW | PIE)
+  Full RELRO ......... yes  (PT_GNU_RELRO over GOT + BIND_NOW)
+  NX ................. yes  (PT_GNU_STACK is RW, not RWX)
+  Stack canary ....... yes  (imports __stack_chk_fail)
+  CET ................ IBT + SHSTK (.note.gnu.property)
+  Stripped ........... yes  (no .symtab; dynamic symbols remain)
+
+--------------------------------------------------------------------------------
+4. LINKAGE
+--------------------------------------------------------------------------------
+  Interpreter: /lib64/ld-linux-x86-64.so.2
+  NEEDED:      libbsd.so.0, libresolv.so.2, libc.so.6
+  Imports:     ~70 functions (GLIBC_2.2.5 .. GLIBC_2.38; LIBBSD_0.2)
+  No libtls/libssl -> upstream TLS code paths are compiled OUT (as in the
+  Ubuntu package).
+
+Key imported capability (from dynamic symbols + PLT):
+  sockets  : socket, connect, bind, listen, accept4, sendmsg, recvfrom,
+             shutdown, setsockopt, getsockopt, getsockname, select, poll, fcntl
+  naming   : getaddrinfo, freeaddrinfo, gai_strerror, getnameinfo,
+             getservbyname, getservbyport
+  strings  : strlcpy, strlcat, strtonum, strdup, strcasecmp, __isoc23_strtol
+  secrets  : readpassphrase, __explicit_bzero_chk, __b64_ntop
+  misc     : alarm, signal, mkdtemp, unlink, rmdir, isatty, arc4random_uniform
+
+--------------------------------------------------------------------------------
+5. PROGRAM STRUCTURE (Ghidra, image base 0x100000)
+--------------------------------------------------------------------------------
+  entry (_start) ........ 0x105240  -> calls __libc_start_main(main=0x102a90)
+  main() ................ 0x102a90  (10,086 bytes, split into 15 hot/cold ranges)
+  helper functions ...... 0x105340 .. 0x106c20
+  Ghidra procedures ..... 236 total (166 internal, 70 external thunks)
+  Extracted strings ..... 247 (133 in .rodata)
+
+FUNCTION INVENTORY (inferred role; full evidence in files/function_inventory.md)
+  file vaddr   Ghidra addr   role
+  ----------   -----------   --------------------------------------------------
+  0x0240       0x102840      cold error fragment: "proxy read too long"
+  0x0866       0x102866      cold fragment: port/service parse errors
+  0x0895       0x102895      set_common_sockopts (TTL/ToS/IPv6 hop, TCP bufsizes)
+  0x093b       0x10293b      remote_connect hot path (connect / "timed out")
+  0x0a32       0x102a32      writep cold path ("write failed (%zu/2)")
+  0x0a48       0x102a48      read/write cold path ("Write Error!", "polling error")
+  0x0a6e       0x102a6e      getnameinfo wrapper cold path
+  0x0a90       0x102a90      main()
+  0x5240       0x105240      _start / entry
+  0x5270/52a0  0x105270/2a0  empty compiler trampolines
+  0x5330       0x105330      exit(0) thunk
+  0x5340       0x105340      atomicio() - EINTR/EAGAIN retry with poll
+  0x5440       0x105440      proxy response line reader (<=1024, until LF)
+  0x54d0       0x1054d0      usage()
+  0x5510       0x105510      strtoport() - numeric port or getservbyname
+  0x55b0       0x1055b0      socket-option/connect helper (fuzzy w/ set_common_sockopts due to inlining)
+  0x59d0       0x1059d0      getaddrinfo -> sockaddr_storage resolver
+  0x5b40       0x105b40      fillbuf()
+  0x5bb0       0x105bb0      UNIX sockaddr builder (handles '@' abstract paths)
+  0x5c60       0x105c60      remote_connect() - timeout connect, getnameinfo, minttl
+  0x6120       0x106120      writep() - -C CRLF translation + -q delay
+  0x6300       0x106300      readwrite() - main poll loop, 16 KB buffers
+  0x6b00       0x106b00      report_sock() - "%s on %s %s" verbose output
+  0x6c20       0x106c20      unix_bind() - UNIX socket create/bind
+
+NOTE: function boundaries are Ghidra's default analysis. GCC hot/cold splitting
+and aggressive inlining split `main` and `remote_connect` into several
+fragments, so a few roles are best-effort (flagged in the inventory).
+
+--------------------------------------------------------------------------------
+6. BEHAVIOR / FEATURES RECOVERED (from strings, imports, decompiled main)
+--------------------------------------------------------------------------------
+  Modes
+    - TCP connect, TCP listen (-l), UDP (-u), UNIX domain (-U), DCCP (-Z),
+      zero-I/O scan (-z), keep-listening (-k), detach (-d).
+  Proxy support (fully inlined in main)
+    - SOCKS4, SOCKS4A, SOCKS5 (-X 4|4A|5) with username/password auth.
+    - HTTP CONNECT tunnelling ("CONNECT host:port HTTP/1.0", Basic auth,
+      status handling for 200/407).
+    - Proxy password via readpassphrase; base64 encoding via __b64_ntop.
+    - Rejects proxy use for UDP / listen / DCCP / UNIX / local source address.
+  Socket options
+    - TTL / hop limit (-M), min TTL (-m), TOS/DSCP keywords (-T:
+      critical, inetcontrol, lowcost, lowdelay, reliability, throughput),
+      TCP send/recv buffers (-I/-O), SO_REUSEADDR/SO_REUSEPORT, broadcast (-b),
+      TCP MD5SIG (-S, password via readpassphrase), source address (-s).
+  Data path
+    - readwrite() select/poll loop over stdin/stdout and the network fd;
+      writep() performs CRLF translation for -C; telnet negotiation (-t);
+      file-descriptor passing (-F) via sendmsg.
+  Misc
+    - Port ranges (lo-hi), random remote ports (-r), timeout (-w), quit delay
+      (-q), receive limit (-W), source port (-p), routing table (-V), verbose
+      (-v), no-DNS (-n), IPv4/IPv6 (-4/-6), short usage/help (-h).
+
+--------------------------------------------------------------------------------
+7. CONFIDENCE & LIMITATIONS
+--------------------------------------------------------------------------------
+  - Identity/provenance: HIGH (package note + banner + option table + imports).
+  - Hardening/linkage:    HIGH (static ELF facts).
+  - Function roles:       MEDIUM (Ghidra auto-names; roles inferred from string
+                          xrefs + call graph; inlining blurs some boundaries).
+  - No runtime/dynamic analysis was performed (the target was never executed).
+  - `inspect_binary_layout` could not emulate the PLT (Unicorn needs 1 GB);
+    PLT/GOT facts were taken from the static disassembly instead.
+  - All addresses are *linked* addresses (base 0); runtime load base unknown.
+
+--------------------------------------------------------------------------------
+8. KEY FILE LOCATIONS
+--------------------------------------------------------------------------------
+  Summary + reports ......... ./results.txt
+  Full artifact index ........ ./files/README.md
+  Layout/hardening ........... ./files/layout_summary.md
+  Function table ............. ./files/function_inventory.md
+  All pseudocode ............. ./files/decompiled_functions.c
+  main() pseudocode .......... ./files/rea-decompile-main.json
+  Raw REA evidence ........... ./files/rea-*.json
+  Disassembly/readelf/strings  ./files/*.txt
+================================================================================

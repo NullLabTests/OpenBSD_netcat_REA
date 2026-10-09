@@ -1,0 +1,67 @@
+{
+  "evidence_id": "ev_b80c8b6e1bce68b169d2e41c079d1e58039aa7d6645637d1f664dda099800152",
+  "subject": {
+    "name": "nc",
+    "digest": {
+      "sha256": "de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d"
+    },
+    "format": "elf",
+    "architecture": "x86_64",
+    "local_path": "/home/illy/REA/nc"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "elf",
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default"
+    },
+    "digest": "a4517e7f2ac9f7c2ed09da4d8f8465b7590bc2ac0569f57abab2f10bef81fd3d"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x1059d0"
+  },
+  "raw_result": "\nundefined4 FUN_001059d0(char *param_1,char *param_2,undefined8 *param_3,int param_4,int param_5)\n\n{\n  uint uVar1;\n  int __ecode;\n  undefined4 uVar2;\n  char *pcVar3;\n  ulong uVar4;\n  sockaddr *psVar5;\n  long in_FS_OFFSET;\n  byte bVar6;\n  addrinfo *local_70;\n  undefined1 local_68 [28];\n  undefined1 local_4c [16];\n  undefined4 local_3c;\n  long local_30;\n  \n  bVar6 = 0;\n  local_68._4_4_ = param_4 * 2;\n  local_68._0_4_ = param_5 * 4;\n  local_30 = *(long *)(in_FS_OFFSET + 0x28);\n  local_3c = 0;\n  local_68._8_4_ = 1;\n  local_68._12_16_ = (undefined1  [16])0x0;\n  local_4c = (undefined1  [16])0x0;\n  __ecode = getaddrinfo(param_1,param_2,(addrinfo *)local_68,&local_70);\n  if (__ecode == 0) {\n    uVar1 = local_70->ai_addrlen;\n    uVar4 = (ulong)uVar1;\n    if (0x80 < uVar1) {\n      freeaddrinfo(local_70);\n                    /* WARNING: Subroutine does not return */\n      errx(1,\"internal error: addrlen < res->ai_addrlen\");\n    }\n    psVar5 = local_70->ai_addr;\n    uVar2 = 0;\n    if (uVar1 < 8) {\n      if ((uVar1 & 4) == 0) {\n        if ((uVar1 != 0) && (*(char *)param_3 = (char)psVar5->sa_family, (uVar1 & 2) != 0)) {\n          *(undefined2 *)((long)param_3 + (uVar4 - 2)) =\n               *(undefined2 *)(psVar5->sa_data + (uVar4 - 4));\n        }\n      }\n      else {\n        *(undefined4 *)param_3 = *(undefined4 *)psVar5;\n        *(undefined4 *)((long)param_3 + (uVar4 - 4)) =\n             *(undefined4 *)(psVar5->sa_data + (uVar4 - 6));\n      }\n      freeaddrinfo(local_70);\n    }\n    else {\n      *(undefined8 *)((long)param_3 + (uVar4 - 8)) = *(undefined8 *)(psVar5->sa_data + (uVar4 - 10))\n      ;\n      for (uVar4 = (ulong)(uVar1 - 1 >> 3); uVar4 != 0; uVar4 = uVar4 - 1) {\n        *param_3 = *(undefined8 *)psVar5;\n        psVar5 = (sockaddr *)(psVar5[-(ulong)bVar6].sa_data + 6);\n        param_3 = param_3 + (ulong)bVar6 * -2 + 1;\n      }\n      freeaddrinfo(local_70);\n    }\n  }\n  else {\n    if (param_5 == 0) {\n      pcVar3 = gai_strerror(__ecode);\n                    /* WARNING: Subroutine does not return */\n      errx(1,\"getaddrinfo(\\\"%.64s\\\", \\\"%.64s\\\"): %s\",param_1,param_2,pcVar3);\n    }\n    uVar2 = 0xffffffff;\n  }\n  if (local_30 == *(long *)(in_FS_OFFSET + 0x28)) {\n    return uVar2;\n  }\n                    /* WARNING: Subroutine does not return */\n  __stack_chk_fail();\n}\n\n",
+  "normalized_result": "\nundefined4 FUN_001059d0(char *param_1,char *param_2,undefined8 *param_3,int param_4,int param_5)\n\n{\n  uint uVar1;\n  int __ecode;\n  undefined4 uVar2;\n  char *pcVar3;\n  ulong uVar4;\n  sockaddr *psVar5;\n  long in_FS_OFFSET;\n  byte bVar6;\n  addrinfo *local_70;\n  undefined1 local_68 [28];\n  undefined1 local_4c [16];\n  undefined4 local_3c;\n  long local_30;\n  \n  bVar6 = 0;\n  local_68._4_4_ = param_4 * 2;\n  local_68._0_4_ = param_5 * 4;\n  local_30 = *(long *)(in_FS_OFFSET + 0x28);\n  local_3c = 0;\n  local_68._8_4_ = 1;\n  local_68._12_16_ = (undefined1  [16])0x0;\n  local_4c = (undefined1  [16])0x0;\n  __ecode = getaddrinfo(param_1,param_2,(addrinfo *)local_68,&local_70);\n  if (__ecode == 0) {\n    uVar1 = local_70->ai_addrlen;\n    uVar4 = (ulong)uVar1;\n    if (0x80 < uVar1) {\n      freeaddrinfo(local_70);\n                    /* WARNING: Subroutine does not return */\n      errx(1,\"internal error: addrlen < res->ai_addrlen\");\n    }\n    psVar5 = local_70->ai_addr;\n    uVar2 = 0;\n    if (uVar1 < 8) {\n      if ((uVar1 & 4) == 0) {\n        if ((uVar1 != 0) && (*(char *)param_3 = (char)psVar5->sa_family, (uVar1 & 2) != 0)) {\n          *(undefined2 *)((long)param_3 + (uVar4 - 2)) =\n               *(undefined2 *)(psVar5->sa_data + (uVar4 - 4));\n        }\n      }\n      else {\n        *(undefined4 *)param_3 = *(undefined4 *)psVar5;\n        *(undefined4 *)((long)param_3 + (uVar4 - 4)) =\n             *(undefined4 *)(psVar5->sa_data + (uVar4 - 6));\n      }\n      freeaddrinfo(local_70);\n    }\n    else {\n      *(undefined8 *)((long)param_3 + (uVar4 - 8)) = *(undefined8 *)(psVar5->sa_data + (uVar4 - 10))\n      ;\n      for (uVar4 = (ulong)(uVar1 - 1 >> 3); uVar4 != 0; uVar4 = uVar4 - 1) {\n        *param_3 = *(undefined8 *)psVar5;\n        psVar5 = (sockaddr *)(psVar5[-(ulong)bVar6].sa_data + 6);\n        param_3 = param_3 + (ulong)bVar6 * -2 + 1;\n      }\n      freeaddrinfo(local_70);\n    }\n  }\n  else {\n    if (param_5 == 0) {\n      pcVar3 = gai_strerror(__ecode);\n                    /* WARNING: Subroutine does not return */\n      errx(1,\"getaddrinfo(\\\"%.64s\\\", \\\"%.64s\\\"): %s\",param_1,param_2,pcVar3);\n    }\n    uVar2 = 0xffffffff;\n  }\n  if (local_30 == *(long *)(in_FS_OFFSET + 0x28)) {\n    return uVar2;\n  }\n                    /* WARNING: Subroutine does not return */\n  __stack_chk_fail();\n}\n\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

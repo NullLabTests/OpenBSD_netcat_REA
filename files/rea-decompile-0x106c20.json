@@ -1,0 +1,67 @@
+{
+  "evidence_id": "ev_06a72a4f635ed34a940d81344362fd08aa4b75273d21224cef02e612d9c23af0",
+  "subject": {
+    "name": "nc",
+    "digest": {
+      "sha256": "de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d"
+    },
+    "format": "elf",
+    "architecture": "x86_64",
+    "local_path": "/home/illy/REA/nc"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "elf",
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default"
+    },
+    "digest": "a4517e7f2ac9f7c2ed09da4d8f8465b7590bc2ac0569f57abab2f10bef81fd3d"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x106c20"
+  },
+  "raw_result": "\nint FUN_00106c20(char *param_1,uint param_2)\n\n{\n  int iVar1;\n  int iVar2;\n  int *piVar3;\n  long in_FS_OFFSET;\n  socklen_t local_ac;\n  sockaddr local_a8 [7];\n  long local_30;\n  \n  local_30 = *(long *)(in_FS_OFFSET + 0x28);\n  iVar1 = FUN_00105bb0(param_1,local_a8,&local_ac);\n  if (iVar1 != -1) {\n    iVar1 = socket(1,2 - (DAT_0018a150 == 0) | param_2,0);\n    if (iVar1 != -1) {\n      if (*param_1 != '@') {\n        unlink(param_1);\n      }\n      iVar2 = bind(iVar1,local_a8,local_ac);\n      if (iVar2 != -1) {\n        if (DAT_0018a148 != 0) {\n          FUN_00106b00(\"Bound\",0,0,param_1);\n        }\n        goto LAB_00106cb1;\n      }\n      piVar3 = __errno_location();\n      iVar2 = *piVar3;\n      close(iVar1);\n      *piVar3 = iVar2;\n    }\n  }\n  iVar1 = -1;\nLAB_00106cb1:\n  if (local_30 == *(long *)(in_FS_OFFSET + 0x28)) {\n    return iVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  __stack_chk_fail();\n}\n\n",
+  "normalized_result": "\nint FUN_00106c20(char *param_1,uint param_2)\n\n{\n  int iVar1;\n  int iVar2;\n  int *piVar3;\n  long in_FS_OFFSET;\n  socklen_t local_ac;\n  sockaddr local_a8 [7];\n  long local_30;\n  \n  local_30 = *(long *)(in_FS_OFFSET + 0x28);\n  iVar1 = FUN_00105bb0(param_1,local_a8,&local_ac);\n  if (iVar1 != -1) {\n    iVar1 = socket(1,2 - (DAT_0018a150 == 0) | param_2,0);\n    if (iVar1 != -1) {\n      if (*param_1 != '@') {\n        unlink(param_1);\n      }\n      iVar2 = bind(iVar1,local_a8,local_ac);\n      if (iVar2 != -1) {\n        if (DAT_0018a148 != 0) {\n          FUN_00106b00(\"Bound\",0,0,param_1);\n        }\n        goto LAB_00106cb1;\n      }\n      piVar3 = __errno_location();\n      iVar2 = *piVar3;\n      close(iVar1);\n      *piVar3 = iVar2;\n    }\n  }\n  iVar1 = -1;\nLAB_00106cb1:\n  if (local_30 == *(long *)(in_FS_OFFSET + 0x28)) {\n    return iVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  __stack_chk_fail();\n}\n\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

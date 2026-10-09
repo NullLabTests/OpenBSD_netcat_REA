@@ -1,0 +1,43 @@
+NOTICE
+======
+
+This repository contains reverse-engineering output (analysis, pseudocode,
+figures and reports) for the `netcat-openbsd` binary. The MIT license in
+LICENSE applies to the original analysis and documentation in this repository.
+
+Third-party material
+--------------------
+
+Upstream source files are included under `files/reference/` for symbol
+correlation only. They are NOT authored here and are NOT covered by this
+repository's MIT license; they retain their original copyright headers and
+license terms (BSD-style, 3-clause):
+
+  * files/reference/upstream_openbsd_netcat.c
+      OpenBSD `netcat.c`, v1.239
+      Copyright (c) 2001 Eric Jackson <ericj@monkey.org>
+      Copyright (c) 2015 Bob Beck.  All rights reserved.
+      BSD 3-Clause.
+
+  * files/reference/upstream_openbsd_atomicio.c
+      OpenBSD `atomicio.c`, v1.11
+      Copyright (c) 2006 Damien Miller.  All rights reserved.
+      Copyright (c) 2005 Anil Madhavapeddy.  All rights reserved.
+      Copyright (c) 1995,1999 Theo de Raadt.  All rights reserved.
+      BSD 3-Clause.
+
+Analyzed target
+---------------
+
+The binary analyzed here (`nc`, SHA-256
+de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d) is the
+Ubuntu/Debian `netcat-openbsd 1.234-1` package. Its source is distributed by
+Debian/Ubuntu and upstream under their own respective licenses. No binary of
+the target is redistributed in this repository.
+
+Analysis tooling
+----------------
+
+This analysis was produced with REA (Reverse Engineer Anything,
+https://github.com/morluto/rea, MIT) and Ghidra
+(https://github.com/NationalSecurityAgency/ghidra, Apache-2.0).

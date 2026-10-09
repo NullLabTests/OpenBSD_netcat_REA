@@ -1,0 +1,341 @@
+U/lib64/ld-linux-x86-64.so.2
+__libc_start_main
+__cxa_finalize
+exit
+read
+__errno_location
+poll
+__stack_chk_fail
+errx
+stderr
+fwrite
+getservbyname
+setsockopt
+strlen
+getaddrinfo
+freeaddrinfo
+gai_strerror
+strlcpy
+strncpy
+bind
+getnameinfo
+fcntl
+connect
+close
+socket
+__fdelt_chk
+select
+getsockopt
+warn
+strncmp
+memchr
+memmove
+sleep
+shutdown
+signal
+alarm
+__fprintf_chk
+warnx
+unlink
+getopt
+optarg
+strcasecmp
+strcmp
+strdup
+optind
+recvfrom
+accept4
+strrchr
+__asprintf_chk
+__ctype_b_loc
+strchr
+rmdir
+getsockname
+arc4random_uniform
+strcspn
+__snprintf_chk
+__explicit_bzero_chk
+isatty
+__isoc23_strtol
+getservbyport
+memcpy
+listen
+mkdtemp
+strlcat
+sendmsg
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+readpassphrase
+strtonum
+__b64_ntop
+libbsd.so.0
+libresolv.so.2
+libc.so.6
+GLIBC_2.2.5
+LIBBSD_0.2
+GLIBC_2.3
+GLIBC_2.25
+GLIBC_2.36
+GLIBC_2.38
+GLIBC_2.14
+GLIBC_2.8
+GLIBC_2.15
+GLIBC_2.10
+GLIBC_2.4
+GLIBC_2.34
+GLIBC_2.3.4
+AWAVAUATSH
+[A\A]A^A_]
+~8Hc
+D$ H
+_AX=
+D$ H
+PTE1
+u+UH
+AWAVAUATSH
+H;=wL
+[A\A]A^A_]
+AUATI
+[A\A]A^A_]
+AUATH
+[A\A]]
+[A\]
+AVAUI
+`[A\A]A^]
+t\UH
+<@t$H
+lw,H
+AWAVAUATSH
+~1Ic
+[A\A]A^A_]
+AVAUATSH
+[A\A]A^]
+[A\A]A^]
+[A\A]A^]
+AWAVAUATSL
+[A\A]A^A_]
+AVSH
+[A^]
+AUATH
+<$@t
+[A\A]]
+proxy read too long
+proxy read
+port number %s: %s
+service "%s" unknown
+set IP ToS
+set IPv6 traffic class
+set TCP receive buffer size
+set TCP send buffer size
+set IP TTL
+set IPv6 unicast hops
+set IP min TTL
+set IPv6 min hop count
+dccp
+timed out
+getaddrinfo: %s
+bind failed
+getnameinfo
+getnameinfo: %s
+select error: %s
+getsockopt error: %s
+connect to %s port %s (%s) %s
+write failed (%zu/2)
+polling error
+Write Error!
+%s on %s
+%s on %s %s
+Bound
+af11
+Listening
+3128
+1080
+Unknown error
+General SOCKS server failure
+Network unreachable
+Host unreachable
+Connection refused
+TTL expired
+Command not supported
+Address type not supported
+Request rejected or failed
+connect
+unsupported proxy protocol
+interval %s: %s
+minttl is %s
+quit timer %s: %s
+receive limit %s: %s
+timeout %s: %s
+TCP receive window %s: %s
+TCP send window %s: %s
+TCP MD5SIG password: 
+af12
+af13
+af21
+af22
+af23
+af31
+af32
+af33
+af41
+af42
+af43
+critical
+inetcontrol
+lowcost
+lowdelay
+reliability
+throughput
+illegal tos value %s
+cannot use -Z and -U
+missing port number
+missing socket pathname
+cannot use port with -U
+cannot use -z and -l
+must use -l with -k
+cannot use -F and -U
+/tmp/nc-XXXXXX
+mkdtemp
+/recv.sock
+no proxy support for UDP mode
+no proxy support for listen
+garbage proxy port delimiter
+Couldn't set SO_REUSEADDR
+Couldn't set SO_REUSEPORT
+getsockname
+recvfrom
+Connection received
+accept
+asprintf
+0.0.0.0
+unknown port "%.64s"
+write failed (%zu/3)
+read failed (%zu/3)
+host name too long for SOCKS5
+internal error: silly AF
+write failed (%zu/%zu)
+read failed (%zu/4)
+read failed (%zu/6)
+read failed (%zu/18)
+hostname too big
+read failed (%zu/8)
+	 []
+Invalid hostname
+CONNECT [%s]:%d HTTP/1.0
+CONNECT %s:%d HTTP/1.0
+hostname too long
+write failed (%zu/%d)
+Proxy password for %s@%s: 
+%s:%s
+Proxy auth response too long
+HTTP/1.0 407 
+HTTP/1.1 407 
+Proxy authentication failed
+HTTP/1.0 200 
+HTTP/1.1 200 
+Proxy error: "%s"
+Connection to %s
+ (%s)
+ %s port [%s/%s] succeeded!
+poll
+sendmsg
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]
+	  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]
+	  [destination] [port]
+getaddrinfo("%.64s", "%.64s"): %s
+internal error: addrlen < res->ai_addrlen
+getaddrinfo for host "%s" port %s: %s
+can't set O_NONBLOCK - timeout not available
+connect to %s (%s) port %s (%s) %s
+Connection not allowed by ruleset
+SOCKS server cannot connect to identd on the client
+Client program and identd report different user-ids
+OpenBSD netcat (Debian patchlevel 1.234-1)
+	Command Summary:
+		-4		Use IPv4
+		-6		Use IPv6
+		-b		Allow broadcast
+		-C		Send CRLF as line-ending
+		-D		Enable the debug socket option
+		-d		Detach from stdin
+		-F		Pass socket fd
+		-h		This help text
+		-I length	TCP receive buffer length
+		-i interval	Delay interval for lines sent, ports scanned
+		-k		Keep inbound sockets open for multiple connects
+		-l		Listen mode, for inbound connects
+		-M ttl		Outgoing TTL / Hop Limit
+		-m minttl	Minimum incoming TTL / Hop Limit
+		-N		Shutdown the network socket after EOF on stdin
+		-n		Suppress name/port resolutions
+		-O length	TCP send buffer length
+		-P proxyuser	Username for proxy authentication
+		-p port		Specify local port for remote connects
+		-q secs		quit after EOF on stdin and delay of secs
+		-r		Randomize remote ports
+		-S		Enable the TCP MD5 signature option
+		-s sourceaddr	Local source address
+		-T keyword	TOS value
+		-t		Answer TELNET negotiation
+		-U		Use UNIX domain socket
+		-u		UDP mode
+		-V rtable	Specify alternate routing table
+		-v		Verbose
+		-W recvlimit	Terminate after receiving a number of packets
+		-w timeout	Timeout for connects and final net reads
+		-X proto	Proxy protocol: "4", "4A", "5" (SOCKS) or "connect"
+		-x addr[:port]	Specify proxy address and port
+		-Z		DCCP mode
+		-z		Zero-I/O mode [used for scanning]
+	Port numbers can be individual or ranges: lo-hi [inclusive]
+no alternate routing table support available
+Unable to read TCP MD5SIG password
+46bCDdFhI:i:klM:m:NnO:P:p:q:rSs:T:tUuV:vW:w:X:x:Zz
+no proxy support for DCCP mode
+no proxy support for unix sockets
+no proxy support for local source address
+missing closing bracket in proxy
+Too many authentication failures
+authentication method negotiation failed
+connection failed, SOCKSv5 error: %s
+connection failed, unsupported address type
+connection failed, SOCKSv4 error: %s
+Unable to read proxy passphrase
+Proxy username/password too long
+Proxy-Authorization: Basic %s
+Too many proxy headers received
+Cannot pass file descriptor to tty
+sendmsg: unexpected return value %zd
+9*3$"
+{"type":"deb","os":"ubuntu","name":"netcat-openbsd","version":"1.234-1","architecture":"amd64"}
+b823fa69cb2bcae5acf66b977262d7b7321755.debug
+.shstrtab
+.note.gnu.property
+.note.gnu.build-id
+.interp
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.plt.got
+.plt.sec
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.note.ABI-tag
+.note.package
+.init_array
+.fini_array
+.dynamic
+.data
+.bss
+.gnu_debuglink

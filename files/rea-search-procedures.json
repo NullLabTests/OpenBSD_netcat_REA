@@ -1,0 +1,1958 @@
+{
+  "evidence_id": "ev_08e0dd8aa4aaf1bd4fc2981331c19a57af2592b1e69e5f79422db0c9ae2dbbe0",
+  "subject": {
+    "name": "nc",
+    "digest": {
+      "sha256": "de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d"
+    },
+    "format": "elf",
+    "architecture": "x86_64",
+    "local_path": "/home/illy/REA/nc"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "elf",
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default"
+    },
+    "digest": "a4517e7f2ac9f7c2ed09da4d8f8465b7590bc2ac0569f57abab2f10bef81fd3d"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "search_procedures",
+  "parameters": {
+    "pattern": ".*",
+    "mode": "regex",
+    "case_sensitive": false
+  },
+  "raw_result": [
+    {
+      "address": "EXTERNAL:0x1",
+      "value": "<EXTERNAL>::__snprintf_chk"
+    },
+    {
+      "address": "EXTERNAL:0x2",
+      "value": "<EXTERNAL>::strcasecmp"
+    },
+    {
+      "address": "EXTERNAL:0x3",
+      "value": "<EXTERNAL>::__libc_start_main"
+    },
+    {
+      "address": "EXTERNAL:0x4",
+      "value": "<EXTERNAL>::__errno_location"
+    },
+    {
+      "address": "EXTERNAL:0x5",
+      "value": "<EXTERNAL>::unlink"
+    },
+    {
+      "address": "EXTERNAL:0x6",
+      "value": "<EXTERNAL>::strncpy"
+    },
+    {
+      "address": "EXTERNAL:0x7",
+      "value": "<EXTERNAL>::strncmp"
+    },
+    {
+      "address": "EXTERNAL:0x8",
+      "value": "<EXTERNAL>::warn"
+    },
+    {
+      "address": "EXTERNAL:0x9",
+      "value": "<EXTERNAL>::sendmsg"
+    },
+    {
+      "address": "EXTERNAL:0xa",
+      "value": "<EXTERNAL>::isatty"
+    },
+    {
+      "address": "EXTERNAL:0xb",
+      "value": "<EXTERNAL>::setsockopt"
+    },
+    {
+      "address": "EXTERNAL:0xc",
+      "value": "<EXTERNAL>::strtonum"
+    },
+    {
+      "address": "EXTERNAL:0xd",
+      "value": "<EXTERNAL>::fcntl"
+    },
+    {
+      "address": "EXTERNAL:0xe",
+      "value": "<EXTERNAL>::shutdown"
+    },
+    {
+      "address": "EXTERNAL:0xf",
+      "value": "<EXTERNAL>::rmdir"
+    },
+    {
+      "address": "EXTERNAL:0x10",
+      "value": "<EXTERNAL>::strlen"
+    },
+    {
+      "address": "EXTERNAL:0x11",
+      "value": "<EXTERNAL>::__stack_chk_fail"
+    },
+    {
+      "address": "EXTERNAL:0x12",
+      "value": "<EXTERNAL>::accept4"
+    },
+    {
+      "address": "EXTERNAL:0x13",
+      "value": "<EXTERNAL>::errx"
+    },
+    {
+      "address": "EXTERNAL:0x14",
+      "value": "<EXTERNAL>::strchr"
+    },
+    {
+      "address": "EXTERNAL:0x15",
+      "value": "<EXTERNAL>::warnx"
+    },
+    {
+      "address": "EXTERNAL:0x16",
+      "value": "<EXTERNAL>::__fdelt_chk"
+    },
+    {
+      "address": "EXTERNAL:0x17",
+      "value": "<EXTERNAL>::gai_strerror"
+    },
+    {
+      "address": "EXTERNAL:0x18",
+      "value": "<EXTERNAL>::strrchr"
+    },
+    {
+      "address": "EXTERNAL:0x19",
+      "value": "<EXTERNAL>::getservbyname"
+    },
+    {
+      "address": "EXTERNAL:0x1a",
+      "value": "<EXTERNAL>::alarm"
+    },
+    {
+      "address": "EXTERNAL:0x1b",
+      "value": "<EXTERNAL>::readpassphrase"
+    },
+    {
+      "address": "EXTERNAL:0x1c",
+      "value": "<EXTERNAL>::close"
+    },
+    {
+      "address": "EXTERNAL:0x1d",
+      "value": "<EXTERNAL>::getnameinfo"
+    },
+    {
+      "address": "EXTERNAL:0x1e",
+      "value": "<EXTERNAL>::strcspn"
+    },
+    {
+      "address": "EXTERNAL:0x1f",
+      "value": "<EXTERNAL>::memchr"
+    },
+    {
+      "address": "EXTERNAL:0x20",
+      "value": "<EXTERNAL>::getsockopt"
+    },
+    {
+      "address": "EXTERNAL:0x21",
+      "value": "<EXTERNAL>::__asprintf_chk"
+    },
+    {
+      "address": "EXTERNAL:0x22",
+      "value": "<EXTERNAL>::strcmp"
+    },
+    {
+      "address": "EXTERNAL:0x23",
+      "value": "<EXTERNAL>::signal"
+    },
+    {
+      "address": "EXTERNAL:0x24",
+      "value": "<EXTERNAL>::memcpy"
+    },
+    {
+      "address": "EXTERNAL:0x25",
+      "value": "<EXTERNAL>::__isoc23_strtol"
+    },
+    {
+      "address": "EXTERNAL:0x26",
+      "value": "<EXTERNAL>::strlcat"
+    },
+    {
+      "address": "EXTERNAL:0x27",
+      "value": "<EXTERNAL>::select"
+    },
+    {
+      "address": "EXTERNAL:0x28",
+      "value": "<EXTERNAL>::err"
+    },
+    {
+      "address": "EXTERNAL:0x29",
+      "value": "<EXTERNAL>::listen"
+    },
+    {
+      "address": "EXTERNAL:0x2a",
+      "value": "<EXTERNAL>::recvfrom"
+    },
+    {
+      "address": "EXTERNAL:0x2b",
+      "value": "<EXTERNAL>::strlcpy"
+    },
+    {
+      "address": "EXTERNAL:0x2c",
+      "value": "<EXTERNAL>::arc4random_uniform"
+    },
+    {
+      "address": "EXTERNAL:0x2d",
+      "value": "<EXTERNAL>::mkdtemp"
+    },
+    {
+      "address": "EXTERNAL:0x2e",
+      "value": "<EXTERNAL>::poll"
+    },
+    {
+      "address": "EXTERNAL:0x2f",
+      "value": "<EXTERNAL>::bind"
+    },
+    {
+      "address": "EXTERNAL:0x30",
+      "value": "<EXTERNAL>::memmove"
+    },
+    {
+      "address": "EXTERNAL:0x31",
+      "value": "<EXTERNAL>::__explicit_bzero_chk"
+    },
+    {
+      "address": "EXTERNAL:0x32",
+      "value": "<EXTERNAL>::getopt"
+    },
+    {
+      "address": "EXTERNAL:0x33",
+      "value": "<EXTERNAL>::__b64_ntop"
+    },
+    {
+      "address": "EXTERNAL:0x34",
+      "value": "<EXTERNAL>::getsockname"
+    },
+    {
+      "address": "EXTERNAL:0x35",
+      "value": "<EXTERNAL>::exit"
+    },
+    {
+      "address": "EXTERNAL:0x36",
+      "value": "<EXTERNAL>::connect"
+    },
+    {
+      "address": "EXTERNAL:0x37",
+      "value": "<EXTERNAL>::fwrite"
+    },
+    {
+      "address": "EXTERNAL:0x38",
+      "value": "<EXTERNAL>::__fprintf_chk"
+    },
+    {
+      "address": "EXTERNAL:0x39",
+      "value": "<EXTERNAL>::getservbyport"
+    },
+    {
+      "address": "EXTERNAL:0x3a",
+      "value": "<EXTERNAL>::getaddrinfo"
+    },
+    {
+      "address": "EXTERNAL:0x3b",
+      "value": "<EXTERNAL>::strdup"
+    },
+    {
+      "address": "EXTERNAL:0x3c",
+      "value": "<EXTERNAL>::strerror"
+    },
+    {
+      "address": "EXTERNAL:0x3d",
+      "value": "<EXTERNAL>::sleep"
+    },
+    {
+      "address": "EXTERNAL:0x3e",
+      "value": "<EXTERNAL>::__ctype_b_loc"
+    },
+    {
+      "address": "EXTERNAL:0x3f",
+      "value": "<EXTERNAL>::freeaddrinfo"
+    },
+    {
+      "address": "EXTERNAL:0x40",
+      "value": "<EXTERNAL>::socket"
+    },
+    {
+      "address": "EXTERNAL:0x41",
+      "value": "<EXTERNAL>::read"
+    },
+    {
+      "address": "EXTERNAL:0x42",
+      "value": "<EXTERNAL>::__cxa_finalize"
+    },
+    {
+      "address": "EXTERNAL:0x43",
+      "value": "<EXTERNAL>::write"
+    },
+    {
+      "address": "EXTERNAL:0x44",
+      "value": "<EXTERNAL>::_ITM_deregisterTMCloneTable"
+    },
+    {
+      "address": "EXTERNAL:0x45",
+      "value": "<EXTERNAL>::_ITM_registerTMCloneTable"
+    },
+    {
+      "address": "EXTERNAL:0x46",
+      "value": "<EXTERNAL>::__gmon_start__"
+    },
+    {
+      "address": "0x102000",
+      "value": "_DT_INIT"
+    },
+    {
+      "address": "0x102020",
+      "value": "FUN_00102020"
+    },
+    {
+      "address": "0x102420",
+      "value": "<EXTERNAL>::write"
+    },
+    {
+      "address": "0x102430",
+      "value": "<EXTERNAL>::read"
+    },
+    {
+      "address": "0x102440",
+      "value": "<EXTERNAL>::__cxa_finalize"
+    },
+    {
+      "address": "0x102450",
+      "value": "<EXTERNAL>::__snprintf_chk"
+    },
+    {
+      "address": "0x102460",
+      "value": "<EXTERNAL>::strcasecmp"
+    },
+    {
+      "address": "0x102470",
+      "value": "<EXTERNAL>::__errno_location"
+    },
+    {
+      "address": "0x102480",
+      "value": "<EXTERNAL>::unlink"
+    },
+    {
+      "address": "0x102490",
+      "value": "<EXTERNAL>::strncpy"
+    },
+    {
+      "address": "0x1024a0",
+      "value": "<EXTERNAL>::strncmp"
+    },
+    {
+      "address": "0x1024b0",
+      "value": "<EXTERNAL>::warn"
+    },
+    {
+      "address": "0x1024c0",
+      "value": "<EXTERNAL>::sendmsg"
+    },
+    {
+      "address": "0x1024d0",
+      "value": "<EXTERNAL>::isatty"
+    },
+    {
+      "address": "0x1024e0",
+      "value": "<EXTERNAL>::setsockopt"
+    },
+    {
+      "address": "0x1024f0",
+      "value": "<EXTERNAL>::strtonum"
+    },
+    {
+      "address": "0x102500",
+      "value": "<EXTERNAL>::fcntl"
+    },
+    {
+      "address": "0x102510",
+      "value": "<EXTERNAL>::shutdown"
+    },
+    {
+      "address": "0x102520",
+      "value": "<EXTERNAL>::rmdir"
+    },
+    {
+      "address": "0x102530",
+      "value": "<EXTERNAL>::strlen"
+    },
+    {
+      "address": "0x102540",
+      "value": "<EXTERNAL>::__stack_chk_fail"
+    },
+    {
+      "address": "0x102550",
+      "value": "<EXTERNAL>::accept4"
+    },
+    {
+      "address": "0x102560",
+      "value": "<EXTERNAL>::errx"
+    },
+    {
+      "address": "0x102570",
+      "value": "<EXTERNAL>::strchr"
+    },
+    {
+      "address": "0x102580",
+      "value": "<EXTERNAL>::warnx"
+    },
+    {
+      "address": "0x102590",
+      "value": "<EXTERNAL>::__fdelt_chk"
+    },
+    {
+      "address": "0x1025a0",
+      "value": "<EXTERNAL>::gai_strerror"
+    },
+    {
+      "address": "0x1025b0",
+      "value": "<EXTERNAL>::strrchr"
+    },
+    {
+      "address": "0x1025c0",
+      "value": "<EXTERNAL>::getservbyname"
+    },
+    {
+      "address": "0x1025d0",
+      "value": "<EXTERNAL>::alarm"
+    },
+    {
+      "address": "0x1025e0",
+      "value": "<EXTERNAL>::readpassphrase"
+    },
+    {
+      "address": "0x1025f0",
+      "value": "<EXTERNAL>::close"
+    },
+    {
+      "address": "0x102600",
+      "value": "<EXTERNAL>::getnameinfo"
+    },
+    {
+      "address": "0x102610",
+      "value": "<EXTERNAL>::strcspn"
+    },
+    {
+      "address": "0x102620",
+      "value": "<EXTERNAL>::memchr"
+    },
+    {
+      "address": "0x102630",
+      "value": "<EXTERNAL>::getsockopt"
+    },
+    {
+      "address": "0x102640",
+      "value": "<EXTERNAL>::__asprintf_chk"
+    },
+    {
+      "address": "0x102650",
+      "value": "<EXTERNAL>::strcmp"
+    },
+    {
+      "address": "0x102660",
+      "value": "<EXTERNAL>::signal"
+    },
+    {
+      "address": "0x102670",
+      "value": "<EXTERNAL>::memcpy"
+    },
+    {
+      "address": "0x102680",
+      "value": "<EXTERNAL>::__isoc23_strtol"
+    },
+    {
+      "address": "0x102690",
+      "value": "<EXTERNAL>::strlcat"
+    },
+    {
+      "address": "0x1026a0",
+      "value": "<EXTERNAL>::select"
+    },
+    {
+      "address": "0x1026b0",
+      "value": "<EXTERNAL>::err"
+    },
+    {
+      "address": "0x1026c0",
+      "value": "<EXTERNAL>::listen"
+    },
+    {
+      "address": "0x1026d0",
+      "value": "<EXTERNAL>::recvfrom"
+    },
+    {
+      "address": "0x1026e0",
+      "value": "<EXTERNAL>::strlcpy"
+    },
+    {
+      "address": "0x1026f0",
+      "value": "<EXTERNAL>::arc4random_uniform"
+    },
+    {
+      "address": "0x102700",
+      "value": "<EXTERNAL>::mkdtemp"
+    },
+    {
+      "address": "0x102710",
+      "value": "<EXTERNAL>::poll"
+    },
+    {
+      "address": "0x102720",
+      "value": "<EXTERNAL>::bind"
+    },
+    {
+      "address": "0x102730",
+      "value": "<EXTERNAL>::memmove"
+    },
+    {
+      "address": "0x102740",
+      "value": "<EXTERNAL>::__explicit_bzero_chk"
+    },
+    {
+      "address": "0x102750",
+      "value": "<EXTERNAL>::getopt"
+    },
+    {
+      "address": "0x102760",
+      "value": "<EXTERNAL>::__b64_ntop"
+    },
+    {
+      "address": "0x102770",
+      "value": "<EXTERNAL>::getsockname"
+    },
+    {
+      "address": "0x102780",
+      "value": "<EXTERNAL>::exit"
+    },
+    {
+      "address": "0x102790",
+      "value": "<EXTERNAL>::connect"
+    },
+    {
+      "address": "0x1027a0",
+      "value": "<EXTERNAL>::fwrite"
+    },
+    {
+      "address": "0x1027b0",
+      "value": "<EXTERNAL>::__fprintf_chk"
+    },
+    {
+      "address": "0x1027c0",
+      "value": "<EXTERNAL>::getservbyport"
+    },
+    {
+      "address": "0x1027d0",
+      "value": "<EXTERNAL>::getaddrinfo"
+    },
+    {
+      "address": "0x1027e0",
+      "value": "<EXTERNAL>::strdup"
+    },
+    {
+      "address": "0x1027f0",
+      "value": "<EXTERNAL>::strerror"
+    },
+    {
+      "address": "0x102800",
+      "value": "<EXTERNAL>::sleep"
+    },
+    {
+      "address": "0x102810",
+      "value": "<EXTERNAL>::__ctype_b_loc"
+    },
+    {
+      "address": "0x102820",
+      "value": "<EXTERNAL>::freeaddrinfo"
+    },
+    {
+      "address": "0x102830",
+      "value": "<EXTERNAL>::socket"
+    },
+    {
+      "address": "0x102840",
+      "value": "FUN_00102840"
+    },
+    {
+      "address": "0x102866",
+      "value": "FUN_00102866"
+    },
+    {
+      "address": "0x102895",
+      "value": "FUN_00102895"
+    },
+    {
+      "address": "0x10293b",
+      "value": "FUN_0010293b"
+    },
+    {
+      "address": "0x102a32",
+      "value": "FUN_00102a32"
+    },
+    {
+      "address": "0x102a48",
+      "value": "FUN_00102a48"
+    },
+    {
+      "address": "0x102a6e",
+      "value": "FUN_00102a6e"
+    },
+    {
+      "address": "0x102a90",
+      "value": "FUN_00102a90"
+    },
+    {
+      "address": "0x105240",
+      "value": "entry"
+    },
+    {
+      "address": "0x105270",
+      "value": "FUN_00105270"
+    },
+    {
+      "address": "0x1052a0",
+      "value": "FUN_001052a0"
+    },
+    {
+      "address": "0x1052e0",
+      "value": "_FINI_0"
+    },
+    {
+      "address": "0x105320",
+      "value": "_INIT_0"
+    },
+    {
+      "address": "0x105330",
+      "value": "FUN_00105330"
+    },
+    {
+      "address": "0x105340",
+      "value": "FUN_00105340"
+    },
+    {
+      "address": "0x105440",
+      "value": "FUN_00105440"
+    },
+    {
+      "address": "0x1054d0",
+      "value": "FUN_001054d0"
+    },
+    {
+      "address": "0x105510",
+      "value": "FUN_00105510"
+    },
+    {
+      "address": "0x1055b0",
+      "value": "FUN_001055b0"
+    },
+    {
+      "address": "0x1059d0",
+      "value": "FUN_001059d0"
+    },
+    {
+      "address": "0x105b40",
+      "value": "FUN_00105b40"
+    },
+    {
+      "address": "0x105bb0",
+      "value": "FUN_00105bb0"
+    },
+    {
+      "address": "0x105c60",
+      "value": "FUN_00105c60"
+    },
+    {
+      "address": "0x106120",
+      "value": "FUN_00106120"
+    },
+    {
+      "address": "0x106300",
+      "value": "FUN_00106300"
+    },
+    {
+      "address": "0x106b00",
+      "value": "FUN_00106b00"
+    },
+    {
+      "address": "0x106c20",
+      "value": "FUN_00106c20"
+    },
+    {
+      "address": "0x106d08",
+      "value": "_DT_FINI"
+    },
+    {
+      "address": "0x18b000",
+      "value": "<EXTERNAL>::__snprintf_chk"
+    },
+    {
+      "address": "0x18b008",
+      "value": "<EXTERNAL>::strcasecmp"
+    },
+    {
+      "address": "0x18b010",
+      "value": "<EXTERNAL>::__libc_start_main"
+    },
+    {
+      "address": "0x18b018",
+      "value": "<EXTERNAL>::__errno_location"
+    },
+    {
+      "address": "0x18b020",
+      "value": "<EXTERNAL>::unlink"
+    },
+    {
+      "address": "0x18b028",
+      "value": "<EXTERNAL>::strncpy"
+    },
+    {
+      "address": "0x18b030",
+      "value": "<EXTERNAL>::strncmp"
+    },
+    {
+      "address": "0x18b038",
+      "value": "<EXTERNAL>::_ITM_deregisterTMCloneTable"
+    },
+    {
+      "address": "0x18b040",
+      "value": "<EXTERNAL>::warn"
+    },
+    {
+      "address": "0x18b048",
+      "value": "<EXTERNAL>::sendmsg"
+    },
+    {
+      "address": "0x18b050",
+      "value": "<EXTERNAL>::isatty"
+    },
+    {
+      "address": "0x18b058",
+      "value": "<EXTERNAL>::setsockopt"
+    },
+    {
+      "address": "0x18b060",
+      "value": "<EXTERNAL>::strtonum"
+    },
+    {
+      "address": "0x18b068",
+      "value": "<EXTERNAL>::fcntl"
+    },
+    {
+      "address": "0x18b070",
+      "value": "<EXTERNAL>::shutdown"
+    },
+    {
+      "address": "0x18b078",
+      "value": "<EXTERNAL>::rmdir"
+    },
+    {
+      "address": "0x18b080",
+      "value": "<EXTERNAL>::strlen"
+    },
+    {
+      "address": "0x18b088",
+      "value": "<EXTERNAL>::__stack_chk_fail"
+    },
+    {
+      "address": "0x18b090",
+      "value": "<EXTERNAL>::accept4"
+    },
+    {
+      "address": "0x18b098",
+      "value": "<EXTERNAL>::errx"
+    },
+    {
+      "address": "0x18b0a0",
+      "value": "<EXTERNAL>::strchr"
+    },
+    {
+      "address": "0x18b0a8",
+      "value": "<EXTERNAL>::warnx"
+    },
+    {
+      "address": "0x18b0b0",
+      "value": "<EXTERNAL>::__fdelt_chk"
+    },
+    {
+      "address": "0x18b0b8",
+      "value": "<EXTERNAL>::gai_strerror"
+    },
+    {
+      "address": "0x18b0c0",
+      "value": "<EXTERNAL>::strrchr"
+    },
+    {
+      "address": "0x18b0c8",
+      "value": "<EXTERNAL>::getservbyname"
+    },
+    {
+      "address": "0x18b0d0",
+      "value": "<EXTERNAL>::alarm"
+    },
+    {
+      "address": "0x18b0d8",
+      "value": "<EXTERNAL>::readpassphrase"
+    },
+    {
+      "address": "0x18b0e0",
+      "value": "<EXTERNAL>::close"
+    },
+    {
+      "address": "0x18b0e8",
+      "value": "<EXTERNAL>::getnameinfo"
+    },
+    {
+      "address": "0x18b0f0",
+      "value": "<EXTERNAL>::strcspn"
+    },
+    {
+      "address": "0x18b0f8",
+      "value": "<EXTERNAL>::memchr"
+    },
+    {
+      "address": "0x18b100",
+      "value": "<EXTERNAL>::getsockopt"
+    },
+    {
+      "address": "0x18b108",
+      "value": "<EXTERNAL>::__asprintf_chk"
+    },
+    {
+      "address": "0x18b110",
+      "value": "<EXTERNAL>::strcmp"
+    },
+    {
+      "address": "0x18b118",
+      "value": "<EXTERNAL>::signal"
+    },
+    {
+      "address": "0x18b120",
+      "value": "<EXTERNAL>::__gmon_start__"
+    },
+    {
+      "address": "0x18b128",
+      "value": "<EXTERNAL>::memcpy"
+    },
+    {
+      "address": "0x18b130",
+      "value": "<EXTERNAL>::__isoc23_strtol"
+    },
+    {
+      "address": "0x18b138",
+      "value": "<EXTERNAL>::strlcat"
+    },
+    {
+      "address": "0x18b140",
+      "value": "<EXTERNAL>::select"
+    },
+    {
+      "address": "0x18b148",
+      "value": "<EXTERNAL>::err"
+    },
+    {
+      "address": "0x18b150",
+      "value": "<EXTERNAL>::listen"
+    },
+    {
+      "address": "0x18b158",
+      "value": "<EXTERNAL>::recvfrom"
+    },
+    {
+      "address": "0x18b160",
+      "value": "<EXTERNAL>::strlcpy"
+    },
+    {
+      "address": "0x18b168",
+      "value": "<EXTERNAL>::arc4random_uniform"
+    },
+    {
+      "address": "0x18b170",
+      "value": "<EXTERNAL>::mkdtemp"
+    },
+    {
+      "address": "0x18b178",
+      "value": "<EXTERNAL>::poll"
+    },
+    {
+      "address": "0x18b180",
+      "value": "<EXTERNAL>::bind"
+    },
+    {
+      "address": "0x18b188",
+      "value": "<EXTERNAL>::memmove"
+    },
+    {
+      "address": "0x18b190",
+      "value": "<EXTERNAL>::__explicit_bzero_chk"
+    },
+    {
+      "address": "0x18b198",
+      "value": "<EXTERNAL>::getopt"
+    },
+    {
+      "address": "0x18b1a0",
+      "value": "<EXTERNAL>::__b64_ntop"
+    },
+    {
+      "address": "0x18b1a8",
+      "value": "<EXTERNAL>::getsockname"
+    },
+    {
+      "address": "0x18b1b0",
+      "value": "<EXTERNAL>::exit"
+    },
+    {
+      "address": "0x18b1b8",
+      "value": "<EXTERNAL>::connect"
+    },
+    {
+      "address": "0x18b1c0",
+      "value": "<EXTERNAL>::fwrite"
+    },
+    {
+      "address": "0x18b1c8",
+      "value": "<EXTERNAL>::__fprintf_chk"
+    },
+    {
+      "address": "0x18b1d0",
+      "value": "<EXTERNAL>::_ITM_registerTMCloneTable"
+    },
+    {
+      "address": "0x18b1d8",
+      "value": "<EXTERNAL>::getservbyport"
+    },
+    {
+      "address": "0x18b1e0",
+      "value": "<EXTERNAL>::getaddrinfo"
+    },
+    {
+      "address": "0x18b1e8",
+      "value": "<EXTERNAL>::strdup"
+    },
+    {
+      "address": "0x18b1f0",
+      "value": "<EXTERNAL>::strerror"
+    },
+    {
+      "address": "0x18b1f8",
+      "value": "<EXTERNAL>::sleep"
+    },
+    {
+      "address": "0x18b200",
+      "value": "<EXTERNAL>::__ctype_b_loc"
+    },
+    {
+      "address": "0x18b208",
+      "value": "<EXTERNAL>::freeaddrinfo"
+    },
+    {
+      "address": "0x18b210",
+      "value": "<EXTERNAL>::socket"
+    },
+    {
+      "address": "0x18b218",
+      "value": "<EXTERNAL>::read"
+    },
+    {
+      "address": "0x18b220",
+      "value": "<EXTERNAL>::__cxa_finalize"
+    },
+    {
+      "address": "0x18b228",
+      "value": "<EXTERNAL>::write"
+    }
+  ],
+  "normalized_result": [
+    {
+      "address": "EXTERNAL:0x1",
+      "value": "<EXTERNAL>::__snprintf_chk"
+    },
+    {
+      "address": "EXTERNAL:0x2",
+      "value": "<EXTERNAL>::strcasecmp"
+    },
+    {
+      "address": "EXTERNAL:0x3",
+      "value": "<EXTERNAL>::__libc_start_main"
+    },
+    {
+      "address": "EXTERNAL:0x4",
+      "value": "<EXTERNAL>::__errno_location"
+    },
+    {
+      "address": "EXTERNAL:0x5",
+      "value": "<EXTERNAL>::unlink"
+    },
+    {
+      "address": "EXTERNAL:0x6",
+      "value": "<EXTERNAL>::strncpy"
+    },
+    {
+      "address": "EXTERNAL:0x7",
+      "value": "<EXTERNAL>::strncmp"
+    },
+    {
+      "address": "EXTERNAL:0x8",
+      "value": "<EXTERNAL>::warn"
+    },
+    {
+      "address": "EXTERNAL:0x9",
+      "value": "<EXTERNAL>::sendmsg"
+    },
+    {
+      "address": "EXTERNAL:0xa",
+      "value": "<EXTERNAL>::isatty"
+    },
+    {
+      "address": "EXTERNAL:0xb",
+      "value": "<EXTERNAL>::setsockopt"
+    },
+    {
+      "address": "EXTERNAL:0xc",
+      "value": "<EXTERNAL>::strtonum"
+    },
+    {
+      "address": "EXTERNAL:0xd",
+      "value": "<EXTERNAL>::fcntl"
+    },
+    {
+      "address": "EXTERNAL:0xe",
+      "value": "<EXTERNAL>::shutdown"
+    },
+    {
+      "address": "EXTERNAL:0xf",
+      "value": "<EXTERNAL>::rmdir"
+    },
+    {
+      "address": "EXTERNAL:0x10",
+      "value": "<EXTERNAL>::strlen"
+    },
+    {
+      "address": "EXTERNAL:0x11",
+      "value": "<EXTERNAL>::__stack_chk_fail"
+    },
+    {
+      "address": "EXTERNAL:0x12",
+      "value": "<EXTERNAL>::accept4"
+    },
+    {
+      "address": "EXTERNAL:0x13",
+      "value": "<EXTERNAL>::errx"
+    },
+    {
+      "address": "EXTERNAL:0x14",
+      "value": "<EXTERNAL>::strchr"
+    },
+    {
+      "address": "EXTERNAL:0x15",
+      "value": "<EXTERNAL>::warnx"
+    },
+    {
+      "address": "EXTERNAL:0x16",
+      "value": "<EXTERNAL>::__fdelt_chk"
+    },
+    {
+      "address": "EXTERNAL:0x17",
+      "value": "<EXTERNAL>::gai_strerror"
+    },
+    {
+      "address": "EXTERNAL:0x18",
+      "value": "<EXTERNAL>::strrchr"
+    },
+    {
+      "address": "EXTERNAL:0x19",
+      "value": "<EXTERNAL>::getservbyname"
+    },
+    {
+      "address": "EXTERNAL:0x1a",
+      "value": "<EXTERNAL>::alarm"
+    },
+    {
+      "address": "EXTERNAL:0x1b",
+      "value": "<EXTERNAL>::readpassphrase"
+    },
+    {
+      "address": "EXTERNAL:0x1c",
+      "value": "<EXTERNAL>::close"
+    },
+    {
+      "address": "EXTERNAL:0x1d",
+      "value": "<EXTERNAL>::getnameinfo"
+    },
+    {
+      "address": "EXTERNAL:0x1e",
+      "value": "<EXTERNAL>::strcspn"
+    },
+    {
+      "address": "EXTERNAL:0x1f",
+      "value": "<EXTERNAL>::memchr"
+    },
+    {
+      "address": "EXTERNAL:0x20",
+      "value": "<EXTERNAL>::getsockopt"
+    },
+    {
+      "address": "EXTERNAL:0x21",
+      "value": "<EXTERNAL>::__asprintf_chk"
+    },
+    {
+      "address": "EXTERNAL:0x22",
+      "value": "<EXTERNAL>::strcmp"
+    },
+    {
+      "address": "EXTERNAL:0x23",
+      "value": "<EXTERNAL>::signal"
+    },
+    {
+      "address": "EXTERNAL:0x24",
+      "value": "<EXTERNAL>::memcpy"
+    },
+    {
+      "address": "EXTERNAL:0x25",
+      "value": "<EXTERNAL>::__isoc23_strtol"
+    },
+    {
+      "address": "EXTERNAL:0x26",
+      "value": "<EXTERNAL>::strlcat"
+    },
+    {
+      "address": "EXTERNAL:0x27",
+      "value": "<EXTERNAL>::select"
+    },
+    {
+      "address": "EXTERNAL:0x28",
+      "value": "<EXTERNAL>::err"
+    },
+    {
+      "address": "EXTERNAL:0x29",
+      "value": "<EXTERNAL>::listen"
+    },
+    {
+      "address": "EXTERNAL:0x2a",
+      "value": "<EXTERNAL>::recvfrom"
+    },
+    {
+      "address": "EXTERNAL:0x2b",
+      "value": "<EXTERNAL>::strlcpy"
+    },
+    {
+      "address": "EXTERNAL:0x2c",
+      "value": "<EXTERNAL>::arc4random_uniform"
+    },
+    {
+      "address": "EXTERNAL:0x2d",
+      "value": "<EXTERNAL>::mkdtemp"
+    },
+    {
+      "address": "EXTERNAL:0x2e",
+      "value": "<EXTERNAL>::poll"
+    },
+    {
+      "address": "EXTERNAL:0x2f",
+      "value": "<EXTERNAL>::bind"
+    },
+    {
+      "address": "EXTERNAL:0x30",
+      "value": "<EXTERNAL>::memmove"
+    },
+    {
+      "address": "EXTERNAL:0x31",
+      "value": "<EXTERNAL>::__explicit_bzero_chk"
+    },
+    {
+      "address": "EXTERNAL:0x32",
+      "value": "<EXTERNAL>::getopt"
+    },
+    {
+      "address": "EXTERNAL:0x33",
+      "value": "<EXTERNAL>::__b64_ntop"
+    },
+    {
+      "address": "EXTERNAL:0x34",
+      "value": "<EXTERNAL>::getsockname"
+    },
+    {
+      "address": "EXTERNAL:0x35",
+      "value": "<EXTERNAL>::exit"
+    },
+    {
+      "address": "EXTERNAL:0x36",
+      "value": "<EXTERNAL>::connect"
+    },
+    {
+      "address": "EXTERNAL:0x37",
+      "value": "<EXTERNAL>::fwrite"
+    },
+    {
+      "address": "EXTERNAL:0x38",
+      "value": "<EXTERNAL>::__fprintf_chk"
+    },
+    {
+      "address": "EXTERNAL:0x39",
+      "value": "<EXTERNAL>::getservbyport"
+    },
+    {
+      "address": "EXTERNAL:0x3a",
+      "value": "<EXTERNAL>::getaddrinfo"
+    },
+    {
+      "address": "EXTERNAL:0x3b",
+      "value": "<EXTERNAL>::strdup"
+    },
+    {
+      "address": "EXTERNAL:0x3c",
+      "value": "<EXTERNAL>::strerror"
+    },
+    {
+      "address": "EXTERNAL:0x3d",
+      "value": "<EXTERNAL>::sleep"
+    },
+    {
+      "address": "EXTERNAL:0x3e",
+      "value": "<EXTERNAL>::__ctype_b_loc"
+    },
+    {
+      "address": "EXTERNAL:0x3f",
+      "value": "<EXTERNAL>::freeaddrinfo"
+    },
+    {
+      "address": "EXTERNAL:0x40",
+      "value": "<EXTERNAL>::socket"
+    },
+    {
+      "address": "EXTERNAL:0x41",
+      "value": "<EXTERNAL>::read"
+    },
+    {
+      "address": "EXTERNAL:0x42",
+      "value": "<EXTERNAL>::__cxa_finalize"
+    },
+    {
+      "address": "EXTERNAL:0x43",
+      "value": "<EXTERNAL>::write"
+    },
+    {
+      "address": "EXTERNAL:0x44",
+      "value": "<EXTERNAL>::_ITM_deregisterTMCloneTable"
+    },
+    {
+      "address": "EXTERNAL:0x45",
+      "value": "<EXTERNAL>::_ITM_registerTMCloneTable"
+    },
+    {
+      "address": "EXTERNAL:0x46",
+      "value": "<EXTERNAL>::__gmon_start__"
+    },
+    {
+      "address": "0x102000",
+      "value": "_DT_INIT"
+    },
+    {
+      "address": "0x102020",
+      "value": "FUN_00102020"
+    },
+    {
+      "address": "0x102420",
+      "value": "<EXTERNAL>::write"
+    },
+    {
+      "address": "0x102430",
+      "value": "<EXTERNAL>::read"
+    },
+    {
+      "address": "0x102440",
+      "value": "<EXTERNAL>::__cxa_finalize"
+    },
+    {
+      "address": "0x102450",
+      "value": "<EXTERNAL>::__snprintf_chk"
+    },
+    {
+      "address": "0x102460",
+      "value": "<EXTERNAL>::strcasecmp"
+    },
+    {
+      "address": "0x102470",
+      "value": "<EXTERNAL>::__errno_location"
+    },
+    {
+      "address": "0x102480",
+      "value": "<EXTERNAL>::unlink"
+    },
+    {
+      "address": "0x102490",
+      "value": "<EXTERNAL>::strncpy"
+    },
+    {
+      "address": "0x1024a0",
+      "value": "<EXTERNAL>::strncmp"
+    },
+    {
+      "address": "0x1024b0",
+      "value": "<EXTERNAL>::warn"
+    },
+    {
+      "address": "0x1024c0",
+      "value": "<EXTERNAL>::sendmsg"
+    },
+    {
+      "address": "0x1024d0",
+      "value": "<EXTERNAL>::isatty"
+    },
+    {
+      "address": "0x1024e0",
+      "value": "<EXTERNAL>::setsockopt"
+    },
+    {
+      "address": "0x1024f0",
+      "value": "<EXTERNAL>::strtonum"
+    },
+    {
+      "address": "0x102500",
+      "value": "<EXTERNAL>::fcntl"
+    },
+    {
+      "address": "0x102510",
+      "value": "<EXTERNAL>::shutdown"
+    },
+    {
+      "address": "0x102520",
+      "value": "<EXTERNAL>::rmdir"
+    },
+    {
+      "address": "0x102530",
+      "value": "<EXTERNAL>::strlen"
+    },
+    {
+      "address": "0x102540",
+      "value": "<EXTERNAL>::__stack_chk_fail"
+    },
+    {
+      "address": "0x102550",
+      "value": "<EXTERNAL>::accept4"
+    },
+    {
+      "address": "0x102560",
+      "value": "<EXTERNAL>::errx"
+    },
+    {
+      "address": "0x102570",
+      "value": "<EXTERNAL>::strchr"
+    },
+    {
+      "address": "0x102580",
+      "value": "<EXTERNAL>::warnx"
+    },
+    {
+      "address": "0x102590",
+      "value": "<EXTERNAL>::__fdelt_chk"
+    },
+    {
+      "address": "0x1025a0",
+      "value": "<EXTERNAL>::gai_strerror"
+    },
+    {
+      "address": "0x1025b0",
+      "value": "<EXTERNAL>::strrchr"
+    },
+    {
+      "address": "0x1025c0",
+      "value": "<EXTERNAL>::getservbyname"
+    },
+    {
+      "address": "0x1025d0",
+      "value": "<EXTERNAL>::alarm"
+    },
+    {
+      "address": "0x1025e0",
+      "value": "<EXTERNAL>::readpassphrase"
+    },
+    {
+      "address": "0x1025f0",
+      "value": "<EXTERNAL>::close"
+    },
+    {
+      "address": "0x102600",
+      "value": "<EXTERNAL>::getnameinfo"
+    },
+    {
+      "address": "0x102610",
+      "value": "<EXTERNAL>::strcspn"
+    },
+    {
+      "address": "0x102620",
+      "value": "<EXTERNAL>::memchr"
+    },
+    {
+      "address": "0x102630",
+      "value": "<EXTERNAL>::getsockopt"
+    },
+    {
+      "address": "0x102640",
+      "value": "<EXTERNAL>::__asprintf_chk"
+    },
+    {
+      "address": "0x102650",
+      "value": "<EXTERNAL>::strcmp"
+    },
+    {
+      "address": "0x102660",
+      "value": "<EXTERNAL>::signal"
+    },
+    {
+      "address": "0x102670",
+      "value": "<EXTERNAL>::memcpy"
+    },
+    {
+      "address": "0x102680",
+      "value": "<EXTERNAL>::__isoc23_strtol"
+    },
+    {
+      "address": "0x102690",
+      "value": "<EXTERNAL>::strlcat"
+    },
+    {
+      "address": "0x1026a0",
+      "value": "<EXTERNAL>::select"
+    },
+    {
+      "address": "0x1026b0",
+      "value": "<EXTERNAL>::err"
+    },
+    {
+      "address": "0x1026c0",
+      "value": "<EXTERNAL>::listen"
+    },
+    {
+      "address": "0x1026d0",
+      "value": "<EXTERNAL>::recvfrom"
+    },
+    {
+      "address": "0x1026e0",
+      "value": "<EXTERNAL>::strlcpy"
+    },
+    {
+      "address": "0x1026f0",
+      "value": "<EXTERNAL>::arc4random_uniform"
+    },
+    {
+      "address": "0x102700",
+      "value": "<EXTERNAL>::mkdtemp"
+    },
+    {
+      "address": "0x102710",
+      "value": "<EXTERNAL>::poll"
+    },
+    {
+      "address": "0x102720",
+      "value": "<EXTERNAL>::bind"
+    },
+    {
+      "address": "0x102730",
+      "value": "<EXTERNAL>::memmove"
+    },
+    {
+      "address": "0x102740",
+      "value": "<EXTERNAL>::__explicit_bzero_chk"
+    },
+    {
+      "address": "0x102750",
+      "value": "<EXTERNAL>::getopt"
+    },
+    {
+      "address": "0x102760",
+      "value": "<EXTERNAL>::__b64_ntop"
+    },
+    {
+      "address": "0x102770",
+      "value": "<EXTERNAL>::getsockname"
+    },
+    {
+      "address": "0x102780",
+      "value": "<EXTERNAL>::exit"
+    },
+    {
+      "address": "0x102790",
+      "value": "<EXTERNAL>::connect"
+    },
+    {
+      "address": "0x1027a0",
+      "value": "<EXTERNAL>::fwrite"
+    },
+    {
+      "address": "0x1027b0",
+      "value": "<EXTERNAL>::__fprintf_chk"
+    },
+    {
+      "address": "0x1027c0",
+      "value": "<EXTERNAL>::getservbyport"
+    },
+    {
+      "address": "0x1027d0",
+      "value": "<EXTERNAL>::getaddrinfo"
+    },
+    {
+      "address": "0x1027e0",
+      "value": "<EXTERNAL>::strdup"
+    },
+    {
+      "address": "0x1027f0",
+      "value": "<EXTERNAL>::strerror"
+    },
+    {
+      "address": "0x102800",
+      "value": "<EXTERNAL>::sleep"
+    },
+    {
+      "address": "0x102810",
+      "value": "<EXTERNAL>::__ctype_b_loc"
+    },
+    {
+      "address": "0x102820",
+      "value": "<EXTERNAL>::freeaddrinfo"
+    },
+    {
+      "address": "0x102830",
+      "value": "<EXTERNAL>::socket"
+    },
+    {
+      "address": "0x102840",
+      "value": "FUN_00102840"
+    },
+    {
+      "address": "0x102866",
+      "value": "FUN_00102866"
+    },
+    {
+      "address": "0x102895",
+      "value": "FUN_00102895"
+    },
+    {
+      "address": "0x10293b",
+      "value": "FUN_0010293b"
+    },
+    {
+      "address": "0x102a32",
+      "value": "FUN_00102a32"
+    },
+    {
+      "address": "0x102a48",
+      "value": "FUN_00102a48"
+    },
+    {
+      "address": "0x102a6e",
+      "value": "FUN_00102a6e"
+    },
+    {
+      "address": "0x102a90",
+      "value": "FUN_00102a90"
+    },
+    {
+      "address": "0x105240",
+      "value": "entry"
+    },
+    {
+      "address": "0x105270",
+      "value": "FUN_00105270"
+    },
+    {
+      "address": "0x1052a0",
+      "value": "FUN_001052a0"
+    },
+    {
+      "address": "0x1052e0",
+      "value": "_FINI_0"
+    },
+    {
+      "address": "0x105320",
+      "value": "_INIT_0"
+    },
+    {
+      "address": "0x105330",
+      "value": "FUN_00105330"
+    },
+    {
+      "address": "0x105340",
+      "value": "FUN_00105340"
+    },
+    {
+      "address": "0x105440",
+      "value": "FUN_00105440"
+    },
+    {
+      "address": "0x1054d0",
+      "value": "FUN_001054d0"
+    },
+    {
+      "address": "0x105510",
+      "value": "FUN_00105510"
+    },
+    {
+      "address": "0x1055b0",
+      "value": "FUN_001055b0"
+    },
+    {
+      "address": "0x1059d0",
+      "value": "FUN_001059d0"
+    },
+    {
+      "address": "0x105b40",
+      "value": "FUN_00105b40"
+    },
+    {
+      "address": "0x105bb0",
+      "value": "FUN_00105bb0"
+    },
+    {
+      "address": "0x105c60",
+      "value": "FUN_00105c60"
+    },
+    {
+      "address": "0x106120",
+      "value": "FUN_00106120"
+    },
+    {
+      "address": "0x106300",
+      "value": "FUN_00106300"
+    },
+    {
+      "address": "0x106b00",
+      "value": "FUN_00106b00"
+    },
+    {
+      "address": "0x106c20",
+      "value": "FUN_00106c20"
+    },
+    {
+      "address": "0x106d08",
+      "value": "_DT_FINI"
+    },
+    {
+      "address": "0x18b000",
+      "value": "<EXTERNAL>::__snprintf_chk"
+    },
+    {
+      "address": "0x18b008",
+      "value": "<EXTERNAL>::strcasecmp"
+    },
+    {
+      "address": "0x18b010",
+      "value": "<EXTERNAL>::__libc_start_main"
+    },
+    {
+      "address": "0x18b018",
+      "value": "<EXTERNAL>::__errno_location"
+    },
+    {
+      "address": "0x18b020",
+      "value": "<EXTERNAL>::unlink"
+    },
+    {
+      "address": "0x18b028",
+      "value": "<EXTERNAL>::strncpy"
+    },
+    {
+      "address": "0x18b030",
+      "value": "<EXTERNAL>::strncmp"
+    },
+    {
+      "address": "0x18b038",
+      "value": "<EXTERNAL>::_ITM_deregisterTMCloneTable"
+    },
+    {
+      "address": "0x18b040",
+      "value": "<EXTERNAL>::warn"
+    },
+    {
+      "address": "0x18b048",
+      "value": "<EXTERNAL>::sendmsg"
+    },
+    {
+      "address": "0x18b050",
+      "value": "<EXTERNAL>::isatty"
+    },
+    {
+      "address": "0x18b058",
+      "value": "<EXTERNAL>::setsockopt"
+    },
+    {
+      "address": "0x18b060",
+      "value": "<EXTERNAL>::strtonum"
+    },
+    {
+      "address": "0x18b068",
+      "value": "<EXTERNAL>::fcntl"
+    },
+    {
+      "address": "0x18b070",
+      "value": "<EXTERNAL>::shutdown"
+    },
+    {
+      "address": "0x18b078",
+      "value": "<EXTERNAL>::rmdir"
+    },
+    {
+      "address": "0x18b080",
+      "value": "<EXTERNAL>::strlen"
+    },
+    {
+      "address": "0x18b088",
+      "value": "<EXTERNAL>::__stack_chk_fail"
+    },
+    {
+      "address": "0x18b090",
+      "value": "<EXTERNAL>::accept4"
+    },
+    {
+      "address": "0x18b098",
+      "value": "<EXTERNAL>::errx"
+    },
+    {
+      "address": "0x18b0a0",
+      "value": "<EXTERNAL>::strchr"
+    },
+    {
+      "address": "0x18b0a8",
+      "value": "<EXTERNAL>::warnx"
+    },
+    {
+      "address": "0x18b0b0",
+      "value": "<EXTERNAL>::__fdelt_chk"
+    },
+    {
+      "address": "0x18b0b8",
+      "value": "<EXTERNAL>::gai_strerror"
+    },
+    {
+      "address": "0x18b0c0",
+      "value": "<EXTERNAL>::strrchr"
+    },
+    {
+      "address": "0x18b0c8",
+      "value": "<EXTERNAL>::getservbyname"
+    },
+    {
+      "address": "0x18b0d0",
+      "value": "<EXTERNAL>::alarm"
+    },
+    {
+      "address": "0x18b0d8",
+      "value": "<EXTERNAL>::readpassphrase"
+    },
+    {
+      "address": "0x18b0e0",
+      "value": "<EXTERNAL>::close"
+    },
+    {
+      "address": "0x18b0e8",
+      "value": "<EXTERNAL>::getnameinfo"
+    },
+    {
+      "address": "0x18b0f0",
+      "value": "<EXTERNAL>::strcspn"
+    },
+    {
+      "address": "0x18b0f8",
+      "value": "<EXTERNAL>::memchr"
+    },
+    {
+      "address": "0x18b100",
+      "value": "<EXTERNAL>::getsockopt"
+    },
+    {
+      "address": "0x18b108",
+      "value": "<EXTERNAL>::__asprintf_chk"
+    },
+    {
+      "address": "0x18b110",
+      "value": "<EXTERNAL>::strcmp"
+    },
+    {
+      "address": "0x18b118",
+      "value": "<EXTERNAL>::signal"
+    },
+    {
+      "address": "0x18b120",
+      "value": "<EXTERNAL>::__gmon_start__"
+    },
+    {
+      "address": "0x18b128",
+      "value": "<EXTERNAL>::memcpy"
+    },
+    {
+      "address": "0x18b130",
+      "value": "<EXTERNAL>::__isoc23_strtol"
+    },
+    {
+      "address": "0x18b138",
+      "value": "<EXTERNAL>::strlcat"
+    },
+    {
+      "address": "0x18b140",
+      "value": "<EXTERNAL>::select"
+    },
+    {
+      "address": "0x18b148",
+      "value": "<EXTERNAL>::err"
+    },
+    {
+      "address": "0x18b150",
+      "value": "<EXTERNAL>::listen"
+    },
+    {
+      "address": "0x18b158",
+      "value": "<EXTERNAL>::recvfrom"
+    },
+    {
+      "address": "0x18b160",
+      "value": "<EXTERNAL>::strlcpy"
+    },
+    {
+      "address": "0x18b168",
+      "value": "<EXTERNAL>::arc4random_uniform"
+    },
+    {
+      "address": "0x18b170",
+      "value": "<EXTERNAL>::mkdtemp"
+    },
+    {
+      "address": "0x18b178",
+      "value": "<EXTERNAL>::poll"
+    },
+    {
+      "address": "0x18b180",
+      "value": "<EXTERNAL>::bind"
+    },
+    {
+      "address": "0x18b188",
+      "value": "<EXTERNAL>::memmove"
+    },
+    {
+      "address": "0x18b190",
+      "value": "<EXTERNAL>::__explicit_bzero_chk"
+    },
+    {
+      "address": "0x18b198",
+      "value": "<EXTERNAL>::getopt"
+    },
+    {
+      "address": "0x18b1a0",
+      "value": "<EXTERNAL>::__b64_ntop"
+    },
+    {
+      "address": "0x18b1a8",
+      "value": "<EXTERNAL>::getsockname"
+    },
+    {
+      "address": "0x18b1b0",
+      "value": "<EXTERNAL>::exit"
+    },
+    {
+      "address": "0x18b1b8",
+      "value": "<EXTERNAL>::connect"
+    },
+    {
+      "address": "0x18b1c0",
+      "value": "<EXTERNAL>::fwrite"
+    },
+    {
+      "address": "0x18b1c8",
+      "value": "<EXTERNAL>::__fprintf_chk"
+    },
+    {
+      "address": "0x18b1d0",
+      "value": "<EXTERNAL>::_ITM_registerTMCloneTable"
+    },
+    {
+      "address": "0x18b1d8",
+      "value": "<EXTERNAL>::getservbyport"
+    },
+    {
+      "address": "0x18b1e0",
+      "value": "<EXTERNAL>::getaddrinfo"
+    },
+    {
+      "address": "0x18b1e8",
+      "value": "<EXTERNAL>::strdup"
+    },
+    {
+      "address": "0x18b1f0",
+      "value": "<EXTERNAL>::strerror"
+    },
+    {
+      "address": "0x18b1f8",
+      "value": "<EXTERNAL>::sleep"
+    },
+    {
+      "address": "0x18b200",
+      "value": "<EXTERNAL>::__ctype_b_loc"
+    },
+    {
+      "address": "0x18b208",
+      "value": "<EXTERNAL>::freeaddrinfo"
+    },
+    {
+      "address": "0x18b210",
+      "value": "<EXTERNAL>::socket"
+    },
+    {
+      "address": "0x18b218",
+      "value": "<EXTERNAL>::read"
+    },
+    {
+      "address": "0x18b220",
+      "value": "<EXTERNAL>::__cxa_finalize"
+    },
+    {
+      "address": "0x18b228",
+      "value": "<EXTERNAL>::write"
+    }
+  ],
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Regex mode uses Java Pattern semantics. Matcher or compiler stack exhaustion returns a resource constraint without closing the session; literal mode avoids regex recursion and returns complete matching values."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

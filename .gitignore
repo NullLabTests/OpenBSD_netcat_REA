@@ -1,0 +1,8 @@
+# Target binary is NOT redistributed (see NOTICE)
+nc
+
+# Analysis scratch
+*.err
+__pycache__/
+.venv/
+env/

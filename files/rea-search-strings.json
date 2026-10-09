@@ -1,0 +1,2046 @@
+{
+  "evidence_id": "ev_9cfbd6d76c65f2f618db12737a72ca16d7509b2b778000450c07b1c4176011c2",
+  "subject": {
+    "name": "nc",
+    "digest": {
+      "sha256": "de49cac83b4645476865e1faa39ac6c9e833baa1ea26fde02ec8045ec71a160d"
+    },
+    "format": "elf",
+    "architecture": "x86_64",
+    "local_path": "/home/illy/REA/nc"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "elf",
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default"
+    },
+    "digest": "a4517e7f2ac9f7c2ed09da4d8f8465b7590bc2ac0569f57abab2f10bef81fd3d"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "search_strings",
+  "parameters": {
+    "pattern": ".*",
+    "mode": "regex",
+    "case_sensitive": false
+  },
+  "raw_result": [
+    {
+      "address": "0x1003a4",
+      "value": "/lib64/ld-linux-x86-64.so.2"
+    },
+    {
+      "address": "0x100af1",
+      "value": "__libc_start_main"
+    },
+    {
+      "address": "0x100b03",
+      "value": "__cxa_finalize"
+    },
+    {
+      "address": "0x100b12",
+      "value": "exit"
+    },
+    {
+      "address": "0x100b17",
+      "value": "read"
+    },
+    {
+      "address": "0x100b1c",
+      "value": "__errno_location"
+    },
+    {
+      "address": "0x100b2d",
+      "value": "poll"
+    },
+    {
+      "address": "0x100b32",
+      "value": "__stack_chk_fail"
+    },
+    {
+      "address": "0x100b43",
+      "value": "errx"
+    },
+    {
+      "address": "0x100b48",
+      "value": "stderr"
+    },
+    {
+      "address": "0x100b4f",
+      "value": "fwrite"
+    },
+    {
+      "address": "0x100b56",
+      "value": "getservbyname"
+    },
+    {
+      "address": "0x100b64",
+      "value": "setsockopt"
+    },
+    {
+      "address": "0x100b6f",
+      "value": "strlen"
+    },
+    {
+      "address": "0x100b76",
+      "value": "getaddrinfo"
+    },
+    {
+      "address": "0x100b82",
+      "value": "freeaddrinfo"
+    },
+    {
+      "address": "0x100b8f",
+      "value": "gai_strerror"
+    },
+    {
+      "address": "0x100b9c",
+      "value": "strlcpy"
+    },
+    {
+      "address": "0x100ba4",
+      "value": "strncpy"
+    },
+    {
+      "address": "0x100bac",
+      "value": "bind"
+    },
+    {
+      "address": "0x100bb1",
+      "value": "getnameinfo"
+    },
+    {
+      "address": "0x100bbd",
+      "value": "fcntl"
+    },
+    {
+      "address": "0x100bc3",
+      "value": "connect"
+    },
+    {
+      "address": "0x100bcb",
+      "value": "close"
+    },
+    {
+      "address": "0x100bd1",
+      "value": "socket"
+    },
+    {
+      "address": "0x100bd8",
+      "value": "__fdelt_chk"
+    },
+    {
+      "address": "0x100be4",
+      "value": "select"
+    },
+    {
+      "address": "0x100beb",
+      "value": "getsockopt"
+    },
+    {
+      "address": "0x100bf6",
+      "value": "warn"
+    },
+    {
+      "address": "0x100bfb",
+      "value": "strncmp"
+    },
+    {
+      "address": "0x100c03",
+      "value": "memchr"
+    },
+    {
+      "address": "0x100c0a",
+      "value": "memmove"
+    },
+    {
+      "address": "0x100c12",
+      "value": "sleep"
+    },
+    {
+      "address": "0x100c18",
+      "value": "shutdown"
+    },
+    {
+      "address": "0x100c21",
+      "value": "signal"
+    },
+    {
+      "address": "0x100c28",
+      "value": "alarm"
+    },
+    {
+      "address": "0x100c2e",
+      "value": "__fprintf_chk"
+    },
+    {
+      "address": "0x100c3c",
+      "value": "warnx"
+    },
+    {
+      "address": "0x100c42",
+      "value": "unlink"
+    },
+    {
+      "address": "0x100c49",
+      "value": "getopt"
+    },
+    {
+      "address": "0x100c50",
+      "value": "optarg"
+    },
+    {
+      "address": "0x100c57",
+      "value": "strcasecmp"
+    },
+    {
+      "address": "0x100c62",
+      "value": "strcmp"
+    },
+    {
+      "address": "0x100c69",
+      "value": "strdup"
+    },
+    {
+      "address": "0x100c70",
+      "value": "optind"
+    },
+    {
+      "address": "0x100c77",
+      "value": "recvfrom"
+    },
+    {
+      "address": "0x100c80",
+      "value": "accept4"
+    },
+    {
+      "address": "0x100c88",
+      "value": "strrchr"
+    },
+    {
+      "address": "0x100c90",
+      "value": "__asprintf_chk"
+    },
+    {
+      "address": "0x100c9f",
+      "value": "__ctype_b_loc"
+    },
+    {
+      "address": "0x100cad",
+      "value": "strchr"
+    },
+    {
+      "address": "0x100cb4",
+      "value": "rmdir"
+    },
+    {
+      "address": "0x100cba",
+      "value": "getsockname"
+    },
+    {
+      "address": "0x100cc6",
+      "value": "arc4random_uniform"
+    },
+    {
+      "address": "0x100cd9",
+      "value": "strcspn"
+    },
+    {
+      "address": "0x100ce1",
+      "value": "__snprintf_chk"
+    },
+    {
+      "address": "0x100cf0",
+      "value": "__explicit_bzero_chk"
+    },
+    {
+      "address": "0x100d05",
+      "value": "isatty"
+    },
+    {
+      "address": "0x100d0c",
+      "value": "__isoc23_strtol"
+    },
+    {
+      "address": "0x100d1c",
+      "value": "getservbyport"
+    },
+    {
+      "address": "0x100d2a",
+      "value": "memcpy"
+    },
+    {
+      "address": "0x100d31",
+      "value": "listen"
+    },
+    {
+      "address": "0x100d38",
+      "value": "mkdtemp"
+    },
+    {
+      "address": "0x100d40",
+      "value": "strlcat"
+    },
+    {
+      "address": "0x100d48",
+      "value": "sendmsg"
+    },
+    {
+      "address": "0x100d50",
+      "value": "_ITM_deregisterTMCloneTable"
+    },
+    {
+      "address": "0x100d6c",
+      "value": "__gmon_start__"
+    },
+    {
+      "address": "0x100d7b",
+      "value": "_ITM_registerTMCloneTable"
+    },
+    {
+      "address": "0x100d95",
+      "value": "readpassphrase"
+    },
+    {
+      "address": "0x100da4",
+      "value": "strtonum"
+    },
+    {
+      "address": "0x100dad",
+      "value": "__b64_ntop"
+    },
+    {
+      "address": "0x100db8",
+      "value": "libbsd.so.0"
+    },
+    {
+      "address": "0x100dc4",
+      "value": "libresolv.so.2"
+    },
+    {
+      "address": "0x100dd3",
+      "value": "libc.so.6"
+    },
+    {
+      "address": "0x100ddd",
+      "value": "GLIBC_2.2.5"
+    },
+    {
+      "address": "0x100de9",
+      "value": "LIBBSD_0.2"
+    },
+    {
+      "address": "0x100df4",
+      "value": "GLIBC_2.3"
+    },
+    {
+      "address": "0x100dfe",
+      "value": "GLIBC_2.25"
+    },
+    {
+      "address": "0x100e09",
+      "value": "GLIBC_2.36"
+    },
+    {
+      "address": "0x100e14",
+      "value": "GLIBC_2.38"
+    },
+    {
+      "address": "0x100e1f",
+      "value": "GLIBC_2.14"
+    },
+    {
+      "address": "0x100e2a",
+      "value": "GLIBC_2.8"
+    },
+    {
+      "address": "0x100e34",
+      "value": "GLIBC_2.15"
+    },
+    {
+      "address": "0x100e3f",
+      "value": "GLIBC_2.10"
+    },
+    {
+      "address": "0x100e4a",
+      "value": "GLIBC_2.4"
+    },
+    {
+      "address": "0x100e54",
+      "value": "GLIBC_2.34"
+    },
+    {
+      "address": "0x100e5f",
+      "value": "GLIBC_2.3.4"
+    },
+    {
+      "address": "0x107004",
+      "value": "proxy read too long"
+    },
+    {
+      "address": "0x107018",
+      "value": "proxy read"
+    },
+    {
+      "address": "0x10702b",
+      "value": "port number %s: %s"
+    },
+    {
+      "address": "0x10703e",
+      "value": "service \"%s\" unknown"
+    },
+    {
+      "address": "0x107053",
+      "value": "set IP ToS"
+    },
+    {
+      "address": "0x10705e",
+      "value": "set IPv6 traffic class"
+    },
+    {
+      "address": "0x107075",
+      "value": "set TCP receive buffer size"
+    },
+    {
+      "address": "0x107091",
+      "value": "set TCP send buffer size"
+    },
+    {
+      "address": "0x1070aa",
+      "value": "set IP TTL"
+    },
+    {
+      "address": "0x1070b5",
+      "value": "set IPv6 unicast hops"
+    },
+    {
+      "address": "0x1070cb",
+      "value": "set IP min TTL"
+    },
+    {
+      "address": "0x1070da",
+      "value": "set IPv6 min hop count"
+    },
+    {
+      "address": "0x1070f6",
+      "value": "timed out"
+    },
+    {
+      "address": "0x107100",
+      "value": "getaddrinfo: %s"
+    },
+    {
+      "address": "0x107110",
+      "value": "bind failed"
+    },
+    {
+      "address": "0x10711c",
+      "value": "getnameinfo"
+    },
+    {
+      "address": "0x107128",
+      "value": "getnameinfo: %s"
+    },
+    {
+      "address": "0x107138",
+      "value": "select error: %s"
+    },
+    {
+      "address": "0x107149",
+      "value": "getsockopt error: %s"
+    },
+    {
+      "address": "0x10715e",
+      "value": "connect to %s port %s (%s) %s"
+    },
+    {
+      "address": "0x10717c",
+      "value": "write failed (%zu/2)"
+    },
+    {
+      "address": "0x107191",
+      "value": "polling error"
+    },
+    {
+      "address": "0x10719f",
+      "value": "Write Error!"
+    },
+    {
+      "address": "0x1071ac",
+      "value": "%s on %s\n"
+    },
+    {
+      "address": "0x1071b6",
+      "value": "%s on %s %s\n"
+    },
+    {
+      "address": "0x1071c3",
+      "value": "Bound"
+    },
+    {
+      "address": "0x1071ce",
+      "value": "Listening"
+    },
+    {
+      "address": "0x1071e2",
+      "value": "Unknown error"
+    },
+    {
+      "address": "0x1071f0",
+      "value": "General SOCKS server failure"
+    },
+    {
+      "address": "0x10720d",
+      "value": "Network unreachable"
+    },
+    {
+      "address": "0x107221",
+      "value": "Host unreachable"
+    },
+    {
+      "address": "0x107232",
+      "value": "Connection refused"
+    },
+    {
+      "address": "0x107245",
+      "value": "TTL expired"
+    },
+    {
+      "address": "0x107251",
+      "value": "Command not supported"
+    },
+    {
+      "address": "0x107267",
+      "value": "Address type not supported"
+    },
+    {
+      "address": "0x107282",
+      "value": "Request rejected or failed"
+    },
+    {
+      "address": "0x10729f",
+      "value": "connect"
+    },
+    {
+      "address": "0x1072aa",
+      "value": "unsupported proxy protocol"
+    },
+    {
+      "address": "0x1072c5",
+      "value": "interval %s: %s"
+    },
+    {
+      "address": "0x1072d5",
+      "value": "minttl is %s"
+    },
+    {
+      "address": "0x1072e2",
+      "value": "quit timer %s: %s"
+    },
+    {
+      "address": "0x1072f4",
+      "value": "receive limit %s: %s"
+    },
+    {
+      "address": "0x107309",
+      "value": "timeout %s: %s"
+    },
+    {
+      "address": "0x107318",
+      "value": "TCP receive window %s: %s"
+    },
+    {
+      "address": "0x107332",
+      "value": "TCP send window %s: %s"
+    },
+    {
+      "address": "0x107349",
+      "value": "TCP MD5SIG password: "
+    },
+    {
+      "address": "0x107396",
+      "value": "critical"
+    },
+    {
+      "address": "0x1073c2",
+      "value": "inetcontrol"
+    },
+    {
+      "address": "0x1073ce",
+      "value": "lowcost"
+    },
+    {
+      "address": "0x1073d6",
+      "value": "lowdelay"
+    },
+    {
+      "address": "0x1073df",
+      "value": "reliability"
+    },
+    {
+      "address": "0x1073eb",
+      "value": "throughput"
+    },
+    {
+      "address": "0x1073f6",
+      "value": "illegal tos value %s"
+    },
+    {
+      "address": "0x10740b",
+      "value": "cannot use -Z and -U"
+    },
+    {
+      "address": "0x107420",
+      "value": "missing port number"
+    },
+    {
+      "address": "0x107434",
+      "value": "missing socket pathname"
+    },
+    {
+      "address": "0x10744c",
+      "value": "cannot use port with -U"
+    },
+    {
+      "address": "0x107464",
+      "value": "cannot use -z and -l"
+    },
+    {
+      "address": "0x107479",
+      "value": "must use -l with -k"
+    },
+    {
+      "address": "0x10748d",
+      "value": "cannot use -F and -U"
+    },
+    {
+      "address": "0x1074b1",
+      "value": "mkdtemp"
+    },
+    {
+      "address": "0x1074b9",
+      "value": "/recv.sock"
+    },
+    {
+      "address": "0x1074c4",
+      "value": "no proxy support for UDP mode"
+    },
+    {
+      "address": "0x1074e2",
+      "value": "no proxy support for listen"
+    },
+    {
+      "address": "0x1074fe",
+      "value": "garbage proxy port delimiter"
+    },
+    {
+      "address": "0x10751b",
+      "value": "Couldn't set SO_REUSEADDR"
+    },
+    {
+      "address": "0x107535",
+      "value": "Couldn't set SO_REUSEPORT"
+    },
+    {
+      "address": "0x10754f",
+      "value": "getsockname"
+    },
+    {
+      "address": "0x10755b",
+      "value": "recvfrom"
+    },
+    {
+      "address": "0x107564",
+      "value": "Connection received"
+    },
+    {
+      "address": "0x107578",
+      "value": "accept"
+    },
+    {
+      "address": "0x107582",
+      "value": "asprintf"
+    },
+    {
+      "address": "0x10758b",
+      "value": "0.0.0.0"
+    },
+    {
+      "address": "0x107593",
+      "value": "unknown port \"%.64s\""
+    },
+    {
+      "address": "0x1075a8",
+      "value": "write failed (%zu/3)"
+    },
+    {
+      "address": "0x1075bd",
+      "value": "read failed (%zu/3)"
+    },
+    {
+      "address": "0x1075d1",
+      "value": "host name too long for SOCKS5"
+    },
+    {
+      "address": "0x1075ef",
+      "value": "internal error: silly AF"
+    },
+    {
+      "address": "0x107608",
+      "value": "write failed (%zu/%zu)"
+    },
+    {
+      "address": "0x10761f",
+      "value": "read failed (%zu/4)"
+    },
+    {
+      "address": "0x107633",
+      "value": "read failed (%zu/6)"
+    },
+    {
+      "address": "0x107647",
+      "value": "read failed (%zu/18)"
+    },
+    {
+      "address": "0x10765c",
+      "value": "hostname too big"
+    },
+    {
+      "address": "0x10766d",
+      "value": "read failed (%zu/8)"
+    },
+    {
+      "address": "0x107681",
+      "value": "\r\n\t []"
+    },
+    {
+      "address": "0x107688",
+      "value": "Invalid hostname"
+    },
+    {
+      "address": "0x107699",
+      "value": "CONNECT [%s]:%d HTTP/1.0\r\n"
+    },
+    {
+      "address": "0x1076b4",
+      "value": "CONNECT %s:%d HTTP/1.0\r\n"
+    },
+    {
+      "address": "0x1076cd",
+      "value": "hostname too long"
+    },
+    {
+      "address": "0x1076df",
+      "value": "write failed (%zu/%d)"
+    },
+    {
+      "address": "0x1076f5",
+      "value": "Proxy password for %s@%s: "
+    },
+    {
+      "address": "0x107710",
+      "value": "%s:%s"
+    },
+    {
+      "address": "0x107716",
+      "value": "Proxy auth response too long"
+    },
+    {
+      "address": "0x107733",
+      "value": "HTTP/1.0 407 "
+    },
+    {
+      "address": "0x107741",
+      "value": "HTTP/1.1 407 "
+    },
+    {
+      "address": "0x10774f",
+      "value": "Proxy authentication failed\n"
+    },
+    {
+      "address": "0x10776c",
+      "value": "HTTP/1.0 200 "
+    },
+    {
+      "address": "0x10777a",
+      "value": "HTTP/1.1 200 "
+    },
+    {
+      "address": "0x107788",
+      "value": "Proxy error: \"%s\""
+    },
+    {
+      "address": "0x10779a",
+      "value": "Connection to %s"
+    },
+    {
+      "address": "0x1077ab",
+      "value": " (%s)"
+    },
+    {
+      "address": "0x1077b1",
+      "value": " %s port [%s/%s] succeeded!\n"
+    },
+    {
+      "address": "0x1077d3",
+      "value": "sendmsg"
+    },
+    {
+      "address": "0x1077e0",
+      "value": "usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]\n\t  [-m minttl] [-O length] [-P proxy_username] [-p source_port]\n\t  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]\n\t  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]\n\t  [destination] [port]\n"
+    },
+    {
+      "address": "0x107908",
+      "value": "getaddrinfo(\"%.64s\", \"%.64s\"): %s"
+    },
+    {
+      "address": "0x107930",
+      "value": "internal error: addrlen < res->ai_addrlen"
+    },
+    {
+      "address": "0x107960",
+      "value": "getaddrinfo for host \"%s\" port %s: %s"
+    },
+    {
+      "address": "0x107988",
+      "value": "can't set O_NONBLOCK - timeout not available"
+    },
+    {
+      "address": "0x1079b8",
+      "value": "connect to %s (%s) port %s (%s) %s"
+    },
+    {
+      "address": "0x1079e0",
+      "value": "Connection not allowed by ruleset"
+    },
+    {
+      "address": "0x107a08",
+      "value": "SOCKS server cannot connect to identd on the client"
+    },
+    {
+      "address": "0x107a40",
+      "value": "Client program and identd report different user-ids"
+    },
+    {
+      "address": "0x107a78",
+      "value": "OpenBSD netcat (Debian patchlevel 1.234-1)\n"
+    },
+    {
+      "address": "0x107aa8",
+      "value": "\tCommand Summary:\n\t\t-4\t\tUse IPv4\n\t\t-6\t\tUse IPv6\n\t\t-b\t\tAllow broadcast\n\t\t-C\t\tSend CRLF as line-ending\n\t\t-D\t\tEnable the debug socket option\n\t\t-d\t\tDetach from stdin\n\t\t-F\t\tPass socket fd\n\t\t-h\t\tThis help text\n\t\t-I length\tTCP receive buffer length\n\t\t-i interval\tDelay interval for lines sent, ports scanned\n\t\t-k\t\tKeep inbound sockets open for multiple connects\n\t\t-l\t\tListen mode, for inbound connects\n\t\t-M ttl\t\tOutgoing TTL / Hop Limit\n\t\t-m minttl\tMinimum incoming TTL / Hop Limit\n\t\t-N\t\tShutdown the network socket after EOF on stdin\n\t\t-n\t\tSuppress name/port resolutions\n\t\t-O length\tTCP send buffer length\n\t\t-P proxyuser\tUsername for proxy authentication\n\t\t-p port\t\tSpecify local port for remote connects\n\t\t-q secs\t\tquit after EOF on stdin and delay of secs\n\t\t-r\t\tRandomize remote ports\n\t\t-S\t\tEnable the TCP MD5 signature option\n\t\t-s sourceaddr\tLocal source address\n\t\t-T keyword\tTOS value\n\t\t-t\t\tAnswer TELNET negotiation\n\t\t-U\t\tUse UNIX domain socket\n\t\t-u\t\tUDP mode\n\t\t-V rtable\tSpecify alternate routing table\n\t\t-v\t\tVerbose\n\t\t-W recvlimit\tTerminate after receiving a number of packets\n\t\t-w timeout\tTimeout for connects and final net reads\n\t\t-X proto\tProxy protocol: \"4\", \"4A\", \"5\" (SOCKS) or \"connect\"\n\t\t-x addr[:port]\tSpecify proxy address and port\n\t\t-Z\t\tDCCP mode\n\t\t-z\t\tZero-I/O mode [used for scanning]\n\tPort numbers can be individual or ranges: lo-hi [inclusive]\n"
+    },
+    {
+      "address": "0x108000",
+      "value": "no alternate routing table support available"
+    },
+    {
+      "address": "0x108030",
+      "value": "Unable to read TCP MD5SIG password"
+    },
+    {
+      "address": "0x108058",
+      "value": "46bCDdFhI:i:klM:m:NnO:P:p:q:rSs:T:tUuV:vW:w:X:x:Zz"
+    },
+    {
+      "address": "0x108090",
+      "value": "no proxy support for DCCP mode"
+    },
+    {
+      "address": "0x1080b0",
+      "value": "no proxy support for unix sockets"
+    },
+    {
+      "address": "0x1080d8",
+      "value": "no proxy support for local source address"
+    },
+    {
+      "address": "0x108108",
+      "value": "missing closing bracket in proxy"
+    },
+    {
+      "address": "0x108130",
+      "value": "Too many authentication failures"
+    },
+    {
+      "address": "0x108158",
+      "value": "authentication method negotiation failed"
+    },
+    {
+      "address": "0x108188",
+      "value": "connection failed, SOCKSv5 error: %s"
+    },
+    {
+      "address": "0x1081b0",
+      "value": "connection failed, unsupported address type"
+    },
+    {
+      "address": "0x1081e0",
+      "value": "connection failed, SOCKSv4 error: %s"
+    },
+    {
+      "address": "0x108208",
+      "value": "Unable to read proxy passphrase"
+    },
+    {
+      "address": "0x108228",
+      "value": "Proxy username/password too long"
+    },
+    {
+      "address": "0x108250",
+      "value": "Proxy-Authorization: Basic %s\r\n"
+    },
+    {
+      "address": "0x108270",
+      "value": "Too many proxy headers received"
+    },
+    {
+      "address": "0x108290",
+      "value": "Cannot pass file descriptor to tty"
+    },
+    {
+      "address": "0x1082b8",
+      "value": "sendmsg: unexpected return value %zd"
+    },
+    {
+      "address": "0x108529",
+      "value": "zR"
+    },
+    {
+      "address": ".shstrtab:0x1",
+      "value": ".shstrtab"
+    },
+    {
+      "address": ".shstrtab:0xb",
+      "value": ".note.gnu.property"
+    },
+    {
+      "address": ".shstrtab:0x1e",
+      "value": ".note.gnu.build-id"
+    },
+    {
+      "address": ".shstrtab:0x31",
+      "value": ".interp"
+    },
+    {
+      "address": ".shstrtab:0x39",
+      "value": ".gnu.hash"
+    },
+    {
+      "address": ".shstrtab:0x43",
+      "value": ".dynsym"
+    },
+    {
+      "address": ".shstrtab:0x4b",
+      "value": ".dynstr"
+    },
+    {
+      "address": ".shstrtab:0x53",
+      "value": ".gnu.version"
+    },
+    {
+      "address": ".shstrtab:0x60",
+      "value": ".gnu.version_r"
+    },
+    {
+      "address": ".shstrtab:0x6f",
+      "value": ".rela.dyn"
+    },
+    {
+      "address": ".shstrtab:0x79",
+      "value": ".rela.plt"
+    },
+    {
+      "address": ".shstrtab:0x83",
+      "value": ".init"
+    },
+    {
+      "address": ".shstrtab:0x89",
+      "value": ".plt.got"
+    },
+    {
+      "address": ".shstrtab:0x92",
+      "value": ".plt.sec"
+    },
+    {
+      "address": ".shstrtab:0x9b",
+      "value": ".text"
+    },
+    {
+      "address": ".shstrtab:0xa1",
+      "value": ".fini"
+    },
+    {
+      "address": ".shstrtab:0xa7",
+      "value": ".rodata"
+    },
+    {
+      "address": ".shstrtab:0xaf",
+      "value": ".eh_frame_hdr"
+    },
+    {
+      "address": ".shstrtab:0xbd",
+      "value": ".eh_frame"
+    },
+    {
+      "address": ".shstrtab:0xc7",
+      "value": ".note.ABI-tag"
+    },
+    {
+      "address": ".shstrtab:0xd5",
+      "value": ".note.package"
+    },
+    {
+      "address": ".shstrtab:0xe3",
+      "value": ".init_array"
+    },
+    {
+      "address": ".shstrtab:0xef",
+      "value": ".fini_array"
+    },
+    {
+      "address": ".shstrtab:0xfb",
+      "value": ".dynamic"
+    },
+    {
+      "address": ".shstrtab:0x104",
+      "value": ".data"
+    },
+    {
+      "address": ".shstrtab:0x10a",
+      "value": ".bss"
+    },
+    {
+      "address": ".shstrtab:0x10f",
+      "value": ".gnu_debuglink"
+    }
+  ],
+  "normalized_result": [
+    {
+      "address": "0x1003a4",
+      "value": "/lib64/ld-linux-x86-64.so.2"
+    },
+    {
+      "address": "0x100af1",
+      "value": "__libc_start_main"
+    },
+    {
+      "address": "0x100b03",
+      "value": "__cxa_finalize"
+    },
+    {
+      "address": "0x100b12",
+      "value": "exit"
+    },
+    {
+      "address": "0x100b17",
+      "value": "read"
+    },
+    {
+      "address": "0x100b1c",
+      "value": "__errno_location"
+    },
+    {
+      "address": "0x100b2d",
+      "value": "poll"
+    },
+    {
+      "address": "0x100b32",
+      "value": "__stack_chk_fail"
+    },
+    {
+      "address": "0x100b43",
+      "value": "errx"
+    },
+    {
+      "address": "0x100b48",
+      "value": "stderr"
+    },
+    {
+      "address": "0x100b4f",
+      "value": "fwrite"
+    },
+    {
+      "address": "0x100b56",
+      "value": "getservbyname"
+    },
+    {
+      "address": "0x100b64",
+      "value": "setsockopt"
+    },
+    {
+      "address": "0x100b6f",
+      "value": "strlen"
+    },
+    {
+      "address": "0x100b76",
+      "value": "getaddrinfo"
+    },
+    {
+      "address": "0x100b82",
+      "value": "freeaddrinfo"
+    },
+    {
+      "address": "0x100b8f",
+      "value": "gai_strerror"
+    },
+    {
+      "address": "0x100b9c",
+      "value": "strlcpy"
+    },
+    {
+      "address": "0x100ba4",
+      "value": "strncpy"
+    },
+    {
+      "address": "0x100bac",
+      "value": "bind"
+    },
+    {
+      "address": "0x100bb1",
+      "value": "getnameinfo"
+    },
+    {
+      "address": "0x100bbd",
+      "value": "fcntl"
+    },
+    {
+      "address": "0x100bc3",
+      "value": "connect"
+    },
+    {
+      "address": "0x100bcb",
+      "value": "close"
+    },
+    {
+      "address": "0x100bd1",
+      "value": "socket"
+    },
+    {
+      "address": "0x100bd8",
+      "value": "__fdelt_chk"
+    },
+    {
+      "address": "0x100be4",
+      "value": "select"
+    },
+    {
+      "address": "0x100beb",
+      "value": "getsockopt"
+    },
+    {
+      "address": "0x100bf6",
+      "value": "warn"
+    },
+    {
+      "address": "0x100bfb",
+      "value": "strncmp"
+    },
+    {
+      "address": "0x100c03",
+      "value": "memchr"
+    },
+    {
+      "address": "0x100c0a",
+      "value": "memmove"
+    },
+    {
+      "address": "0x100c12",
+      "value": "sleep"
+    },
+    {
+      "address": "0x100c18",
+      "value": "shutdown"
+    },
+    {
+      "address": "0x100c21",
+      "value": "signal"
+    },
+    {
+      "address": "0x100c28",
+      "value": "alarm"
+    },
+    {
+      "address": "0x100c2e",
+      "value": "__fprintf_chk"
+    },
+    {
+      "address": "0x100c3c",
+      "value": "warnx"
+    },
+    {
+      "address": "0x100c42",
+      "value": "unlink"
+    },
+    {
+      "address": "0x100c49",
+      "value": "getopt"
+    },
+    {
+      "address": "0x100c50",
+      "value": "optarg"
+    },
+    {
+      "address": "0x100c57",
+      "value": "strcasecmp"
+    },
+    {
+      "address": "0x100c62",
+      "value": "strcmp"
+    },
+    {
+      "address": "0x100c69",
+      "value": "strdup"
+    },
+    {
+      "address": "0x100c70",
+      "value": "optind"
+    },
+    {
+      "address": "0x100c77",
+      "value": "recvfrom"
+    },
+    {
+      "address": "0x100c80",
+      "value": "accept4"
+    },
+    {
+      "address": "0x100c88",
+      "value": "strrchr"
+    },
+    {
+      "address": "0x100c90",
+      "value": "__asprintf_chk"
+    },
+    {
+      "address": "0x100c9f",
+      "value": "__ctype_b_loc"
+    },
+    {
+      "address": "0x100cad",
+      "value": "strchr"
+    },
+    {
+      "address": "0x100cb4",
+      "value": "rmdir"
+    },
+    {
+      "address": "0x100cba",
+      "value": "getsockname"
+    },
+    {
+      "address": "0x100cc6",
+      "value": "arc4random_uniform"
+    },
+    {
+      "address": "0x100cd9",
+      "value": "strcspn"
+    },
+    {
+      "address": "0x100ce1",
+      "value": "__snprintf_chk"
+    },
+    {
+      "address": "0x100cf0",
+      "value": "__explicit_bzero_chk"
+    },
+    {
+      "address": "0x100d05",
+      "value": "isatty"
+    },
+    {
+      "address": "0x100d0c",
+      "value": "__isoc23_strtol"
+    },
+    {
+      "address": "0x100d1c",
+      "value": "getservbyport"
+    },
+    {
+      "address": "0x100d2a",
+      "value": "memcpy"
+    },
+    {
+      "address": "0x100d31",
+      "value": "listen"
+    },
+    {
+      "address": "0x100d38",
+      "value": "mkdtemp"
+    },
+    {
+      "address": "0x100d40",
+      "value": "strlcat"
+    },
+    {
+      "address": "0x100d48",
+      "value": "sendmsg"
+    },
+    {
+      "address": "0x100d50",
+      "value": "_ITM_deregisterTMCloneTable"
+    },
+    {
+      "address": "0x100d6c",
+      "value": "__gmon_start__"
+    },
+    {
+      "address": "0x100d7b",
+      "value": "_ITM_registerTMCloneTable"
+    },
+    {
+      "address": "0x100d95",
+      "value": "readpassphrase"
+    },
+    {
+      "address": "0x100da4",
+      "value": "strtonum"
+    },
+    {
+      "address": "0x100dad",
+      "value": "__b64_ntop"
+    },
+    {
+      "address": "0x100db8",
+      "value": "libbsd.so.0"
+    },
+    {
+      "address": "0x100dc4",
+      "value": "libresolv.so.2"
+    },
+    {
+      "address": "0x100dd3",
+      "value": "libc.so.6"
+    },
+    {
+      "address": "0x100ddd",
+      "value": "GLIBC_2.2.5"
+    },
+    {
+      "address": "0x100de9",
+      "value": "LIBBSD_0.2"
+    },
+    {
+      "address": "0x100df4",
+      "value": "GLIBC_2.3"
+    },
+    {
+      "address": "0x100dfe",
+      "value": "GLIBC_2.25"
+    },
+    {
+      "address": "0x100e09",
+      "value": "GLIBC_2.36"
+    },
+    {
+      "address": "0x100e14",
+      "value": "GLIBC_2.38"
+    },
+    {
+      "address": "0x100e1f",
+      "value": "GLIBC_2.14"
+    },
+    {
+      "address": "0x100e2a",
+      "value": "GLIBC_2.8"
+    },
+    {
+      "address": "0x100e34",
+      "value": "GLIBC_2.15"
+    },
+    {
+      "address": "0x100e3f",
+      "value": "GLIBC_2.10"
+    },
+    {
+      "address": "0x100e4a",
+      "value": "GLIBC_2.4"
+    },
+    {
+      "address": "0x100e54",
+      "value": "GLIBC_2.34"
+    },
+    {
+      "address": "0x100e5f",
+      "value": "GLIBC_2.3.4"
+    },
+    {
+      "address": "0x107004",
+      "value": "proxy read too long"
+    },
+    {
+      "address": "0x107018",
+      "value": "proxy read"
+    },
+    {
+      "address": "0x10702b",
+      "value": "port number %s: %s"
+    },
+    {
+      "address": "0x10703e",
+      "value": "service \"%s\" unknown"
+    },
+    {
+      "address": "0x107053",
+      "value": "set IP ToS"
+    },
+    {
+      "address": "0x10705e",
+      "value": "set IPv6 traffic class"
+    },
+    {
+      "address": "0x107075",
+      "value": "set TCP receive buffer size"
+    },
+    {
+      "address": "0x107091",
+      "value": "set TCP send buffer size"
+    },
+    {
+      "address": "0x1070aa",
+      "value": "set IP TTL"
+    },
+    {
+      "address": "0x1070b5",
+      "value": "set IPv6 unicast hops"
+    },
+    {
+      "address": "0x1070cb",
+      "value": "set IP min TTL"
+    },
+    {
+      "address": "0x1070da",
+      "value": "set IPv6 min hop count"
+    },
+    {
+      "address": "0x1070f6",
+      "value": "timed out"
+    },
+    {
+      "address": "0x107100",
+      "value": "getaddrinfo: %s"
+    },
+    {
+      "address": "0x107110",
+      "value": "bind failed"
+    },
+    {
+      "address": "0x10711c",
+      "value": "getnameinfo"
+    },
+    {
+      "address": "0x107128",
+      "value": "getnameinfo: %s"
+    },
+    {
+      "address": "0x107138",
+      "value": "select error: %s"
+    },
+    {
+      "address": "0x107149",
+      "value": "getsockopt error: %s"
+    },
+    {
+      "address": "0x10715e",
+      "value": "connect to %s port %s (%s) %s"
+    },
+    {
+      "address": "0x10717c",
+      "value": "write failed (%zu/2)"
+    },
+    {
+      "address": "0x107191",
+      "value": "polling error"
+    },
+    {
+      "address": "0x10719f",
+      "value": "Write Error!"
+    },
+    {
+      "address": "0x1071ac",
+      "value": "%s on %s\n"
+    },
+    {
+      "address": "0x1071b6",
+      "value": "%s on %s %s\n"
+    },
+    {
+      "address": "0x1071c3",
+      "value": "Bound"
+    },
+    {
+      "address": "0x1071ce",
+      "value": "Listening"
+    },
+    {
+      "address": "0x1071e2",
+      "value": "Unknown error"
+    },
+    {
+      "address": "0x1071f0",
+      "value": "General SOCKS server failure"
+    },
+    {
+      "address": "0x10720d",
+      "value": "Network unreachable"
+    },
+    {
+      "address": "0x107221",
+      "value": "Host unreachable"
+    },
+    {
+      "address": "0x107232",
+      "value": "Connection refused"
+    },
+    {
+      "address": "0x107245",
+      "value": "TTL expired"
+    },
+    {
+      "address": "0x107251",
+      "value": "Command not supported"
+    },
+    {
+      "address": "0x107267",
+      "value": "Address type not supported"
+    },
+    {
+      "address": "0x107282",
+      "value": "Request rejected or failed"
+    },
+    {
+      "address": "0x10729f",
+      "value": "connect"
+    },
+    {
+      "address": "0x1072aa",
+      "value": "unsupported proxy protocol"
+    },
+    {
+      "address": "0x1072c5",
+      "value": "interval %s: %s"
+    },
+    {
+      "address": "0x1072d5",
+      "value": "minttl is %s"
+    },
+    {
+      "address": "0x1072e2",
+      "value": "quit timer %s: %s"
+    },
+    {
+      "address": "0x1072f4",
+      "value": "receive limit %s: %s"
+    },
+    {
+      "address": "0x107309",
+      "value": "timeout %s: %s"
+    },
+    {
+      "address": "0x107318",
+      "value": "TCP receive window %s: %s"
+    },
+    {
+      "address": "0x107332",
+      "value": "TCP send window %s: %s"
+    },
+    {
+      "address": "0x107349",
+      "value": "TCP MD5SIG password: "
+    },
+    {
+      "address": "0x107396",
+      "value": "critical"
+    },
+    {
+      "address": "0x1073c2",
+      "value": "inetcontrol"
+    },
+    {
+      "address": "0x1073ce",
+      "value": "lowcost"
+    },
+    {
+      "address": "0x1073d6",
+      "value": "lowdelay"
+    },
+    {
+      "address": "0x1073df",
+      "value": "reliability"
+    },
+    {
+      "address": "0x1073eb",
+      "value": "throughput"
+    },
+    {
+      "address": "0x1073f6",
+      "value": "illegal tos value %s"
+    },
+    {
+      "address": "0x10740b",
+      "value": "cannot use -Z and -U"
+    },
+    {
+      "address": "0x107420",
+      "value": "missing port number"
+    },
+    {
+      "address": "0x107434",
+      "value": "missing socket pathname"
+    },
+    {
+      "address": "0x10744c",
+      "value": "cannot use port with -U"
+    },
+    {
+      "address": "0x107464",
+      "value": "cannot use -z and -l"
+    },
+    {
+      "address": "0x107479",
+      "value": "must use -l with -k"
+    },
+    {
+      "address": "0x10748d",
+      "value": "cannot use -F and -U"
+    },
+    {
+      "address": "0x1074b1",
+      "value": "mkdtemp"
+    },
+    {
+      "address": "0x1074b9",
+      "value": "/recv.sock"
+    },
+    {
+      "address": "0x1074c4",
+      "value": "no proxy support for UDP mode"
+    },
+    {
+      "address": "0x1074e2",
+      "value": "no proxy support for listen"
+    },
+    {
+      "address": "0x1074fe",
+      "value": "garbage proxy port delimiter"
+    },
+    {
+      "address": "0x10751b",
+      "value": "Couldn't set SO_REUSEADDR"
+    },
+    {
+      "address": "0x107535",
+      "value": "Couldn't set SO_REUSEPORT"
+    },
+    {
+      "address": "0x10754f",
+      "value": "getsockname"
+    },
+    {
+      "address": "0x10755b",
+      "value": "recvfrom"
+    },
+    {
+      "address": "0x107564",
+      "value": "Connection received"
+    },
+    {
+      "address": "0x107578",
+      "value": "accept"
+    },
+    {
+      "address": "0x107582",
+      "value": "asprintf"
+    },
+    {
+      "address": "0x10758b",
+      "value": "0.0.0.0"
+    },
+    {
+      "address": "0x107593",
+      "value": "unknown port \"%.64s\""
+    },
+    {
+      "address": "0x1075a8",
+      "value": "write failed (%zu/3)"
+    },
+    {
+      "address": "0x1075bd",
+      "value": "read failed (%zu/3)"
+    },
+    {
+      "address": "0x1075d1",
+      "value": "host name too long for SOCKS5"
+    },
+    {
+      "address": "0x1075ef",
+      "value": "internal error: silly AF"
+    },
+    {
+      "address": "0x107608",
+      "value": "write failed (%zu/%zu)"
+    },
+    {
+      "address": "0x10761f",
+      "value": "read failed (%zu/4)"
+    },
+    {
+      "address": "0x107633",
+      "value": "read failed (%zu/6)"
+    },
+    {
+      "address": "0x107647",
+      "value": "read failed (%zu/18)"
+    },
+    {
+      "address": "0x10765c",
+      "value": "hostname too big"
+    },
+    {
+      "address": "0x10766d",
+      "value": "read failed (%zu/8)"
+    },
+    {
+      "address": "0x107681",
+      "value": "\r\n\t []"
+    },
+    {
+      "address": "0x107688",
+      "value": "Invalid hostname"
+    },
+    {
+      "address": "0x107699",
+      "value": "CONNECT [%s]:%d HTTP/1.0\r\n"
+    },
+    {
+      "address": "0x1076b4",
+      "value": "CONNECT %s:%d HTTP/1.0\r\n"
+    },
+    {
+      "address": "0x1076cd",
+      "value": "hostname too long"
+    },
+    {
+      "address": "0x1076df",
+      "value": "write failed (%zu/%d)"
+    },
+    {
+      "address": "0x1076f5",
+      "value": "Proxy password for %s@%s: "
+    },
+    {
+      "address": "0x107710",
+      "value": "%s:%s"
+    },
+    {
+      "address": "0x107716",
+      "value": "Proxy auth response too long"
+    },
+    {
+      "address": "0x107733",
+      "value": "HTTP/1.0 407 "
+    },
+    {
+      "address": "0x107741",
+      "value": "HTTP/1.1 407 "
+    },
+    {
+      "address": "0x10774f",
+      "value": "Proxy authentication failed\n"
+    },
+    {
+      "address": "0x10776c",
+      "value": "HTTP/1.0 200 "
+    },
+    {
+      "address": "0x10777a",
+      "value": "HTTP/1.1 200 "
+    },
+    {
+      "address": "0x107788",
+      "value": "Proxy error: \"%s\""
+    },
+    {
+      "address": "0x10779a",
+      "value": "Connection to %s"
+    },
+    {
+      "address": "0x1077ab",
+      "value": " (%s)"
+    },
+    {
+      "address": "0x1077b1",
+      "value": " %s port [%s/%s] succeeded!\n"
+    },
+    {
+      "address": "0x1077d3",
+      "value": "sendmsg"
+    },
+    {
+      "address": "0x1077e0",
+      "value": "usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]\n\t  [-m minttl] [-O length] [-P proxy_username] [-p source_port]\n\t  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]\n\t  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]\n\t  [destination] [port]\n"
+    },
+    {
+      "address": "0x107908",
+      "value": "getaddrinfo(\"%.64s\", \"%.64s\"): %s"
+    },
+    {
+      "address": "0x107930",
+      "value": "internal error: addrlen < res->ai_addrlen"
+    },
+    {
+      "address": "0x107960",
+      "value": "getaddrinfo for host \"%s\" port %s: %s"
+    },
+    {
+      "address": "0x107988",
+      "value": "can't set O_NONBLOCK - timeout not available"
+    },
+    {
+      "address": "0x1079b8",
+      "value": "connect to %s (%s) port %s (%s) %s"
+    },
+    {
+      "address": "0x1079e0",
+      "value": "Connection not allowed by ruleset"
+    },
+    {
+      "address": "0x107a08",
+      "value": "SOCKS server cannot connect to identd on the client"
+    },
+    {
+      "address": "0x107a40",
+      "value": "Client program and identd report different user-ids"
+    },
+    {
+      "address": "0x107a78",
+      "value": "OpenBSD netcat (Debian patchlevel 1.234-1)\n"
+    },
+    {
+      "address": "0x107aa8",
+      "value": "\tCommand Summary:\n\t\t-4\t\tUse IPv4\n\t\t-6\t\tUse IPv6\n\t\t-b\t\tAllow broadcast\n\t\t-C\t\tSend CRLF as line-ending\n\t\t-D\t\tEnable the debug socket option\n\t\t-d\t\tDetach from stdin\n\t\t-F\t\tPass socket fd\n\t\t-h\t\tThis help text\n\t\t-I length\tTCP receive buffer length\n\t\t-i interval\tDelay interval for lines sent, ports scanned\n\t\t-k\t\tKeep inbound sockets open for multiple connects\n\t\t-l\t\tListen mode, for inbound connects\n\t\t-M ttl\t\tOutgoing TTL / Hop Limit\n\t\t-m minttl\tMinimum incoming TTL / Hop Limit\n\t\t-N\t\tShutdown the network socket after EOF on stdin\n\t\t-n\t\tSuppress name/port resolutions\n\t\t-O length\tTCP send buffer length\n\t\t-P proxyuser\tUsername for proxy authentication\n\t\t-p port\t\tSpecify local port for remote connects\n\t\t-q secs\t\tquit after EOF on stdin and delay of secs\n\t\t-r\t\tRandomize remote ports\n\t\t-S\t\tEnable the TCP MD5 signature option\n\t\t-s sourceaddr\tLocal source address\n\t\t-T keyword\tTOS value\n\t\t-t\t\tAnswer TELNET negotiation\n\t\t-U\t\tUse UNIX domain socket\n\t\t-u\t\tUDP mode\n\t\t-V rtable\tSpecify alternate routing table\n\t\t-v\t\tVerbose\n\t\t-W recvlimit\tTerminate after receiving a number of packets\n\t\t-w timeout\tTimeout for connects and final net reads\n\t\t-X proto\tProxy protocol: \"4\", \"4A\", \"5\" (SOCKS) or \"connect\"\n\t\t-x addr[:port]\tSpecify proxy address and port\n\t\t-Z\t\tDCCP mode\n\t\t-z\t\tZero-I/O mode [used for scanning]\n\tPort numbers can be individual or ranges: lo-hi [inclusive]\n"
+    },
+    {
+      "address": "0x108000",
+      "value": "no alternate routing table support available"
+    },
+    {
+      "address": "0x108030",
+      "value": "Unable to read TCP MD5SIG password"
+    },
+    {
+      "address": "0x108058",
+      "value": "46bCDdFhI:i:klM:m:NnO:P:p:q:rSs:T:tUuV:vW:w:X:x:Zz"
+    },
+    {
+      "address": "0x108090",
+      "value": "no proxy support for DCCP mode"
+    },
+    {
+      "address": "0x1080b0",
+      "value": "no proxy support for unix sockets"
+    },
+    {
+      "address": "0x1080d8",
+      "value": "no proxy support for local source address"
+    },
+    {
+      "address": "0x108108",
+      "value": "missing closing bracket in proxy"
+    },
+    {
+      "address": "0x108130",
+      "value": "Too many authentication failures"
+    },
+    {
+      "address": "0x108158",
+      "value": "authentication method negotiation failed"
+    },
+    {
+      "address": "0x108188",
+      "value": "connection failed, SOCKSv5 error: %s"
+    },
+    {
+      "address": "0x1081b0",
+      "value": "connection failed, unsupported address type"
+    },
+    {
+      "address": "0x1081e0",
+      "value": "connection failed, SOCKSv4 error: %s"
+    },
+    {
+      "address": "0x108208",
+      "value": "Unable to read proxy passphrase"
+    },
+    {
+      "address": "0x108228",
+      "value": "Proxy username/password too long"
+    },
+    {
+      "address": "0x108250",
+      "value": "Proxy-Authorization: Basic %s\r\n"
+    },
+    {
+      "address": "0x108270",
+      "value": "Too many proxy headers received"
+    },
+    {
+      "address": "0x108290",
+      "value": "Cannot pass file descriptor to tty"
+    },
+    {
+      "address": "0x1082b8",
+      "value": "sendmsg: unexpected return value %zd"
+    },
+    {
+      "address": "0x108529",
+      "value": "zR"
+    },
+    {
+      "address": ".shstrtab:0x1",
+      "value": ".shstrtab"
+    },
+    {
+      "address": ".shstrtab:0xb",
+      "value": ".note.gnu.property"
+    },
+    {
+      "address": ".shstrtab:0x1e",
+      "value": ".note.gnu.build-id"
+    },
+    {
+      "address": ".shstrtab:0x31",
+      "value": ".interp"
+    },
+    {
+      "address": ".shstrtab:0x39",
+      "value": ".gnu.hash"
+    },
+    {
+      "address": ".shstrtab:0x43",
+      "value": ".dynsym"
+    },
+    {
+      "address": ".shstrtab:0x4b",
+      "value": ".dynstr"
+    },
+    {
+      "address": ".shstrtab:0x53",
+      "value": ".gnu.version"
+    },
+    {
+      "address": ".shstrtab:0x60",
+      "value": ".gnu.version_r"
+    },
+    {
+      "address": ".shstrtab:0x6f",
+      "value": ".rela.dyn"
+    },
+    {
+      "address": ".shstrtab:0x79",
+      "value": ".rela.plt"
+    },
+    {
+      "address": ".shstrtab:0x83",
+      "value": ".init"
+    },
+    {
+      "address": ".shstrtab:0x89",
+      "value": ".plt.got"
+    },
+    {
+      "address": ".shstrtab:0x92",
+      "value": ".plt.sec"
+    },
+    {
+      "address": ".shstrtab:0x9b",
+      "value": ".text"
+    },
+    {
+      "address": ".shstrtab:0xa1",
+      "value": ".fini"
+    },
+    {
+      "address": ".shstrtab:0xa7",
+      "value": ".rodata"
+    },
+    {
+      "address": ".shstrtab:0xaf",
+      "value": ".eh_frame_hdr"
+    },
+    {
+      "address": ".shstrtab:0xbd",
+      "value": ".eh_frame"
+    },
+    {
+      "address": ".shstrtab:0xc7",
+      "value": ".note.ABI-tag"
+    },
+    {
+      "address": ".shstrtab:0xd5",
+      "value": ".note.package"
+    },
+    {
+      "address": ".shstrtab:0xe3",
+      "value": ".init_array"
+    },
+    {
+      "address": ".shstrtab:0xef",
+      "value": ".fini_array"
+    },
+    {
+      "address": ".shstrtab:0xfb",
+      "value": ".dynamic"
+    },
+    {
+      "address": ".shstrtab:0x104",
+      "value": ".data"
+    },
+    {
+      "address": ".shstrtab:0x10a",
+      "value": ".bss"
+    },
+    {
+      "address": ".shstrtab:0x10f",
+      "value": ".gnu_debuglink"
+    }
+  ],
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Regex mode uses Java Pattern semantics. Matcher or compiler stack exhaustion returns a resource constraint without closing the session; literal mode avoids regex recursion and returns complete matching values."
+  ],
+  "locations": [],
+  "evidence_links": []
+}
